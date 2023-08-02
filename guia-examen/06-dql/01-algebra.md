@@ -33,13 +33,11 @@ relaciones existentes se genera otra relación. Se tiene dos tipos de operadores
 
 * Selección ( $\sigma$ )
 
-  Operador de selección $\sigma$, permite seleccionar un subconjunto de registros de una relación (R),
-todas aquellas que satisfacen cierto predicado P, esto es:
-
+  Operador de selección $\sigma$, permite seleccionar un subconjunto de registros de una relación (R), todas aquellas que satisfacen cierto predicado P, esto es:
   $$\sigma_P(R)$$
 
   Un predicado puede contener una combinación booleana, donde se pueden usar operadores
-lógicos como: ∨,∧ combinándolos con operadores de comparación (>, <, =, <>, <= , >=)
+  lógicos como: ∨,∧ combinándolos con operadores de comparación (>, <, =, <>, <= , >=)
 
 * Proyección ( $\pi$ )
 
@@ -55,8 +53,7 @@ lógicos como: ∨,∧ combinándolos con operadores de comparación (>, <, =, <
 
   Esta operación es el resultado de la relación formada por la agregación de dos
   relaciones que ya existen.
-
-  $$ R_1 \cup  R_2$$
+  $$R_1 \cup R_2$$
 
   Ambas relaciones deben tener el mismo número de atributos
 
@@ -75,10 +72,10 @@ lógicos como: ∨,∧ combinándolos con operadores de comparación (>, <, =, <
   Representa al producto cartesiano usual de conjuntos.
 
   Combina tuplas de cualquieras dos (o más) relaciones, hace la combinación de todos con
-todos.
+  todos.
 
   Si las relaciones a operar tienen N y M tuplas de n y m atributos respectivamente, la
-relación resultante del producto cartesiano tiene N×M tuplas de n+m atributos.
+  relación resultante del producto cartesiano tiene N×M tuplas de n+m atributos.
   $$R_1 X R_2$$
 
 ### 6.1.2 Operadores derivados
@@ -86,10 +83,10 @@ relación resultante del producto cartesiano tiene N×M tuplas de n+m atributos.
 * Intersección ( $\cap$ )
 
   Esta operación tiene como resultado la relación formada por las tuplas comunes a las
-relaciones que ya existen.
+  relaciones que ya existen.
 
   Las relaciones con las que se ha de operar deben tener el mismo grado y los mismos
-dominios en sus atributos.
+  dominios en sus atributos.
   $$R1 \cap  R_2 = R_1 -(R_1 - R_2)$$
 
 * Reunión natural o join ( $\bowtie$ )
@@ -102,10 +99,9 @@ dominios en sus atributos.
 * División ($\div$)
 
   Toma dos relaciones una unaria y una binaria que concuerden en el otro atributo de la
-binaria con todos los valores de la relación unaria.
+  binaria con todos los valores de la relación unaria.
 
   Definición de la operación división con operadores básicos:
-
   * $R_1$={$A_1,A_2$}, $R_2$={$A_2$}
   * $R_1$ $\div$ $R_2$ =$\pi$ $A_1( R_1 )$- $(\pi$ $A_1$ $((\pi$ $A_1 (R_1 )X R_2)–R_1))$
 
@@ -123,8 +119,8 @@ venta= {venta_id(pk),cliente_id(fk),producto_id(fk),cantidad}
 
 2. Nombre de los clientes, descripción y cantidad de los productos comprados.
 
-    $\pi_{nombreCte,descProd,cantidad}$ ($\sigma_{cliente.cliente\_id=venta.cliente\_id}$
-     \^$_{venta.cliente\_id=producto.producto\_id}$ (cliente X venta X producto))
+    $\pi_{nombreCte,descProd,cantidad}$ ($\sigma_{cliente.cliente\_id=venta.cliente\_id}
+    $\^$_{venta.cliente\_id=producto.producto\_id}$ (cliente X venta X producto))
 
 3. Clientes que no han comprado ningún producto
 
