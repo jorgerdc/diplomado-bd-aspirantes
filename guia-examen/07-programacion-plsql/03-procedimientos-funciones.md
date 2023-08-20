@@ -287,7 +287,7 @@ A#B#E
 * Empleando parámetros con notación por nombre. Esto significa que los parámetros pueden
   ser especificados en un orden diferente, pero para ser asignados correctamente, se debe
   especificar el nombre del parámetro al momento de invocar.  En Oracle se emplea el
-  operador ` =>`  para asociar  el nombre del parámetro con su valor.
+  operador `=>`  para asociar  el nombre del parámetro con su valor.
 
 ```sql
 select joinStrings(
