@@ -150,9 +150,11 @@ Estos operadores fueron creados para simplificar la construcción de consultas.
 
 Considere los siguientes esquemas relacionales
 
-   cliente={cliente_id(pk),nombreCte,direccionCte,paisCte}
-   producto={producto_id(pk),descProd,precio}
-   venta= {venta_id(pk),cliente_id(fk),producto_id(fk),cantidad}
+cliente={cliente_id(pk),nombreCte,direccionCte,paisCte}
+  
+producto={producto_id(pk),descProd,precio}
+
+venta= {venta_id(pk),cliente_id(fk),producto_id(fk),cantidad}
 
 1. Nombre de los clientes del país México.
 
