@@ -17,6 +17,7 @@ find  [directorio...]  [criterio...] [acción...]
 Si no se especifica ningún directorio se asume el directorio actual. Si
 no se proporciona ningún criterio todos los archivos son aceptados por find. Si no se
 especifica ninguna acción se muestran por la salida estándar los archivos encontrados.
+
 Ejemplos:
 
 * Mostrar recursivamente todos los archivos del directorio actual

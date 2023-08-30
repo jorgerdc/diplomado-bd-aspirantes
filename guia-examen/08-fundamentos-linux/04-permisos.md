@@ -79,7 +79,7 @@ Para cada uno de estos tres niveles, asigna tres tipos de permisos básicos:
 * `w` para la escritura.
 * `x` para la ejecución.
 
-Esta información se guarda en el nodo-i del archivo y se puede ver con un 
+Esta información se guarda en el nodo-i del archivo y se puede ver con un
 listado largo (ls -l)
 
 ```bash
@@ -251,4 +251,3 @@ Los documentos de esta sección representan solo una pequeña introducción a
 conceptos y comandos básicos y fundamentales en Linux.  Definitivamente
 existe una gran cantidad de conceptos y comandos por revisar para profundizar
 y aumentar los conocimientos en general de los sistemas UNIX, GNU/Linux.
-
