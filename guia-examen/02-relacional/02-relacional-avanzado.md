@@ -1,4 +1,4 @@
-# Modelo lógico avanzado
+# Diseño lógico avanzado
 
 ## Transformación de Jerarquía de tipos
 
@@ -14,7 +14,6 @@ Transformaremos los ejemplos presentados en el modelo entidad-relación.
 
 <p align="center">
 <img src="img/generalizacion-exclusiva.jpg"></p>
-
 
 * Especialización (traslape parcial)
 
@@ -37,7 +36,6 @@ b) Hacer uso de banderas, se crean en el supertipo tantos atributos como suptipo
 
 <p align="center">
 <img src="img/generalizacion-no-exclusiva-2op.jpg"></p>
-
 
 ## Agregación
 
