@@ -5,15 +5,17 @@
 * Un trigger (disparador) es un programa PL/SQL que se almacena en la base de datos.  Su
   principal diferencia con respecto a otros programas como procedimientos o funciones, es
   que un trigger no puede ser invocado por el programador o usuario, más bien, los
-  triggers se ejecutan cuando ocurre un evento en la base de datos.
-* El usuario que desee crear un trigger deberá contar con el privilegio create trigger.
+  triggers se ejecutan cuando ocurre un evento en la base de datos, por ejemplo:
+  eventos DML (inserciones, actualizaciones, eliminaciones de datos), eventos a
+  nivel base de datos: crear un usuario, eliminar un usuario, etc.
+* El usuario que desee crear un trigger deberá contar con el privilegio `create trigger``.
 
 ### 7.6.1 DML Triggers
 
 Representan el tipo de trigger más común y usado. El trigger se ejecuta cuando se realiza
 una operación `insert`, `update` o `delete` sobre un dato que pertenece a una tabla.  El
-trigger se asocia a la tabla (no a los datos).   En esta categoría los triggers pueden ser
-útiles para:
+trigger se asocia a la tabla (no a los datos). En esta categoría un trigger pueden ser
+útil para:
 
 * Auditoría (monitorear y controlar quién y cuándo se modifica un dato).
 * Respaldar datos antes que estos sean modificados o eliminados.

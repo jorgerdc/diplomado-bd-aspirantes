@@ -75,16 +75,19 @@ de alguna aplicación.
 ### Procedimientos
 
 Son objetos con nombre almacenados en el diccionario de la base de datos. No requieren ser
-re-compilados cada vez que se deseen ejecutar No regresa un valor como en el caso de una
-función, pero soporta parámetros de entrada, salida que pueden simular retorno de
+re-compilados cada vez que se deseen ejecutar. No regresa un valor como en el caso de una
+función, pero soporta parámetros de entrada y salida que pueden simular retorno de
 múltiples valores a través del uso de variables de salida. Pueden actualizar el estado de
 la base de datos, modificar datos, etc.
 
 ### Funciones
 
-Similares a un procedimiento con la diferencia que una función regresa un valor de un
-determinado tipo de dato Las funciones no deben alterar o modificar el estado de la base
-de datos ni los datos. La función debe trabajar únicamente con los parámetros que recibe.
+Las funciones son similares a un procedimiento almacenado con algunas diferencias:
+
+* Una función regresa un valor de un determinado tipo de dato.
+* Las funciones no deben alterar o modificar el estado de la base de datos ni
+  los datos.
+* Una función debe trabajar únicamente con los parámetros que recibe.
 
 ### Triggers
 
@@ -94,7 +97,7 @@ lo que no aceptan ningún tipo de parámetro, no regresan algún valor.
 ### Otros objetos PL/SQL
 
 * Paquetes (spec y body)
-* TIpos de datos personalizados
+* Tipos de datos personalizados
 * Colecciones
 * Excepciones
 
@@ -181,7 +184,7 @@ v_balance number;
 ```
 
 Es posible hacer referencia a un renglón de una tabla o cursor, con el fin de crear
-variables que tengan que permitan acceder a todos los atributos o columnas de dicho
+variables que permitan acceder a todos los atributos o columnas de dicho
 renglón. para ello se emplea %rowtype. Su sintaxis es:
 
 ```sql
@@ -260,7 +263,7 @@ PL/SQL soporta 3 estructuras de iteración:
 ### 7.5.1 For loops
 
 Generalmente un for loop se emplea para recorrer cursores, pero también se pueden emplear
-para otros propósitos empleado un For numérico (iteración por rango de valores).
+para otros propósitos empleando un For numérico (iteración por rango de valores).
 
 Sintaxis For numérico:
 

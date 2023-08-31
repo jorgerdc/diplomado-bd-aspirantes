@@ -2,10 +2,10 @@
 
 ## 7.7 Procedimientos almacenados
 
-En secciones anteriores se revisó que los bloques anónimos que se compilan cada vez que
-son ejecutados y no se almacenan en la base de datos. Si se desea que estos bloques sean
-guardados en la base de datos, se requiere hacer uso de un procedimiento almacenado
-(stored procedure). 
+En secciones anteriores se revisó el concepto de bloque anónimo, los cuales se
+compilan cada vez que son ejecutados y no se almacenan en la base de datos.
+Si se desea que estos bloques sean guardados en la base de datos, se requiere
+hacer uso de un procedimiento almacenado (stored procedure).
 
 Un procedimiento almacenado es un programa PL/SQL que es compilado y almacenado en el
 servidor. Una vez realizado esto, no se requiere volver a escribir todas las instrucciones
@@ -131,12 +131,12 @@ declare
 
 begin
   
-  creaAsignatura(v_id,'Electronica',12,'PL-2OO9');
-  dbms_output.put_line('La asignatura Electronica creada con id: '||v_id);
+  creaAsignatura(v_id,'Electrónica',12,'PL-2OO9');
+  dbms_output.put_line('La asignatura Electrónica creada con id: '||v_id);
   
-  creaAsignatura(v_id,'Electronica Digital',12,'PL-2OO9','Electronica');
+  creaAsignatura(v_id,'Electrónica Digital',12,'PL-2OO9','Electrónica');
   dbms_output.put_line(
-    'La asignatura Electronica Digital creada con id: '||v_id);
+    'La asignatura Electrónica Digital creada con id: '||v_id);
 end;
 /
 
@@ -156,11 +156,11 @@ end;
 declare
   v_id number;
 begin
-  creaAsignatura(v_id,'Electronica',12,'PL-2OO9');
-  dbms_output.put_line('La asignatura Electronica creada con id: '||v_id);
-  creaAsignatura(v_id,'Electronica Digital',12,'PL-2OO9','Electronica');
+  creaAsignatura(v_id,'Electrónica',12,'PL-2OO9');
+  dbms_output.put_line('La asignatura Electrónica creada con id: '||v_id);
+  creaAsignatura(v_id,'Electrónica Digital',12,'PL-2OO9','Electrónica');
   dbms_output.put_line(
-    'La asignatura Electronica Digital creada con id: '||v_id);
+    'La asignatura Electrónica Digital creada con id: '||v_id);
   commit;
 
   exception
