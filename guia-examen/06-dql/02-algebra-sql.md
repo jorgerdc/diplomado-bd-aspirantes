@@ -24,7 +24,7 @@ select <columna1>,<columna2>,…,
 from tabla;
 ```
 
-Muestra todos los registro de la tabla correspondientes a los atributos enlistados.
+Muestra todos los registros de la tabla correspondientes a los atributos enlistados.
 
 * Unión
 
@@ -74,7 +74,7 @@ select <columna1>,<columna2>,…,
 from tabla2;
 ```
 
-Muesta como resultado aquellos registros que se encuentren en ambas tablas
+Muestra como resultado aquellos registros que se encuentren en ambas tablas
 
 * Reunión Natural (join)
 
@@ -87,7 +87,7 @@ En Oracle se tienen las siguientes opciones
 ```
 
 Con el `natural join` se realiza una unión con todos los campos en común de las relaciones
-que se estan operando, estos campos deben tener los mismos nombres para poder realizar la
+que se están operando, estos campos deben tener los mismos nombres para poder realizar la
 operación, en caso contrario, el resultado será la realización de un producto cartesiano.
 
 En el `join..using(<columnas>)` permite especificar el campo (o los campos) por el cual
@@ -103,7 +103,7 @@ Considere el siguiente modelo relacional
 
 <p align ="center"><img src="img/esquemaVentas.png" width="400"></p>
 
-Con base en el modelo anterior y las seguientes datos se realizarán las siguientes
+Con base en el modelo anterior y los datos mostrados se realizarán las siguientes
 consultas:
 
 * CLIENTE
