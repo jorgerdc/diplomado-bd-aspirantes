@@ -1,10 +1,10 @@
-# Diseño lógico avanzado
+# 2.2 Diseño lógico avanzado
 
-## Transformación de Jerarquía de tipos
+## 2.2.1 Transformación de Jerarquía de tipos
 
 Para cada supertipo y subtipo se crea una tabla, con sus respectivos atributos.
 
-## Exclusividad (disjunta)
+### 2.2.1.1 Exclusividad (disjunta)
 
 * Generalización (traslape total)
 
@@ -22,7 +22,7 @@ El atributo discriminante es opcional  (admite nulos).
 <p align="center">
   <img src="img/especializacion-exclusiva.jpg"></p>
 
-## No exclusiva
+### 2.2.1.2  No exclusiva
 
 Si la jerarquía no es exclusividad (solapamiento) pueden darse dos opciones:
 
@@ -37,10 +37,10 @@ b) Hacer uso de banderas, se crean en el supertipo tantos atributos como suptipo
 <p align="center">
 <img src="img/generalizacion-no-exclusiva-2op.jpg"></p>
 
-## Agregación
+## 2.2.3 Agregación
 
 Se transforma primero la relación interna de la agregación la cual dará lugar a una
-nueva tabla, posteriormente se transforma la relaicón de la que participa la agregación.
+nueva tabla, posteriormente se transforma la relacIón de la que participa la agregación.
 
 <p align="center">
 <img src="img/agregacion.jpg"></p>
