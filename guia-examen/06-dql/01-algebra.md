@@ -49,7 +49,7 @@ completos, permiten expresar cualquier consulta sobre una Base de Datos
   (>, <, =, <>, <= , >=), esto es:
   $$\sigma_P(R)$$
 
-<p align ="center"\><img src=img/seleccion.png width="400"></p>
+<p align ="center"\><img src=img/seleccion1.png width="400"></p>
 
 #### Proyección ( $\pi$ )
 
@@ -61,7 +61,7 @@ completos, permiten expresar cualquier consulta sobre una Base de Datos
   Donde:
   $A_1, A_2,…,A_n$ son atributos de la relación R
 
-  <p align="center"\><img src=img/proyeccion.png width="400"></p>
+  <p align="center"\><img src=img/proyeccion1.png width="400"></p>
 
 #### Unión ( $\cup$ )
 
@@ -69,7 +69,7 @@ completos, permiten expresar cualquier consulta sobre una Base de Datos
   vertical de dos relaciones que ya existen.
   $$R_1 \cup R_2$$
 
-  <p align="center"\><img src=img/union.png width="150"></p>
+  <p align="center"\><img src=img/union1.png width="150"></p>
 
 #### Diferencia (–)
 
@@ -77,7 +77,7 @@ completos, permiten expresar cualquier consulta sobre una Base de Datos
   $R_1$ que no se encuentran en la relación $R_2$.
   $$R_1 – R_2$$
 
-  <p align="center"\><img src=img/diferencia.png width="150"></p>
+  <p align="center"\><img src=img/diferencia1.png width="150"></p>
 
   En las operaciones de unión y diferencia ambas relaciones deben tener el mismo número
   de atributos y el dominio del atributo i-ésimo de cada relación debe coincidir.
@@ -97,8 +97,8 @@ completos, permiten expresar cualquier consulta sobre una Base de Datos
   relación resultante del producto cartesiano tiene N×M tuplas de n+m atributos.
   $$R_1 X R_2$$
 
-  <p align="center"\><img src=img/producto1.png width="250"></p>
-  <p align="center"\><img src=img/producto2.png width="250"></p>
+  <p align="center"\><img src=img/producto11.png width="250"></p>
+  <p align="center"\><img src=img/producto21.png width="250"></p>
 
 ### 6.1.2 Operadores derivados
 
@@ -117,7 +117,7 @@ Estos operadores fueron creados para simplificar la construcción de consultas.
   que aparecen en ambas relaciones. Permite combinar tuplas de dos relaciones a través de
   una condición sobre los atributos.
 
-  <p align="center"\><img src=img/reunion_natural.png width="450"></p>
+  <p align="center"\><img src=img/reunion_natural1.png width="450"></p>
 
 ### Intersección ( $\cap$ )
 
@@ -128,7 +128,7 @@ Estos operadores fueron creados para simplificar la construcción de consultas.
   dominios en sus atributos.
   $$R_1 \cap  R_2 = R_1 -(R_1 - R_2)$$
 
-  <p align="center"\><img src=img/interseccion1.png width="120"></p>
+  <p align="center"\><img src=img/interseccion11.png width="120"></p>
   
 ### División ($\div$)
 
@@ -137,11 +137,11 @@ Estos operadores fueron creados para simplificar la construcción de consultas.
   en ambas relaciones, la división de "R1 ÷ R2" dará como resultado los valores de "A1"
   tales que para todo valor "A2" en R2 existe una tupla en R1.
   
-  <p align="center"\><img src=img/division.png width="350"></p>
+  <p align="center"\><img src=img/division1.png width="350"></p>
 
   Definición de la operación división con operadores básicos:
 
-  <p align="center"\><img src=img/definicion_division.png width="450"></p>
+  <p align="center"\><img src=img/definicion_division1.png width="450"></p>
 
   Todas las operaciones de conjuntos eliminan tuplas repetidas.
 
@@ -159,26 +159,26 @@ venta= {cliente_id(fk), producto_id(fk), cantidad}
 
 1. Nombre de los clientes del país México.
 
-   ![select|50](img/ejemplo_1.png)
+   ![select|50](img/ejemplo_11.png)
 
    En este ejemplo observamos el uso de los operadores unarios
 
 2. Nombre de los clientes, descripción y cantidad de los productos comprados.
 
-   ![select|50](img/ejemplo_2.png)
+   ![select|50](img/ejemplo_21.png)
 
    En este ejemplo observamos la utilización del producto cartesiano, con la
    condición de igualdad de atributos.
 
 3. Clientes que no han comprado ningún producto
 
-   ![select|50](img/ejemplo_3.png)
+   ![select|50](img/ejemplo_31.png)
 
    En este ejemplo se observa el uso del operador diferencia
 
 4. Clientes que compraron todos los producto de la empresa
 
-   ![select|50](img/ejemplo_4.png)
+   ![select|50](img/ejemplo_41.png)
 
    En este ejemplo se muestra el uso del operador división, en el que tenemos una relación
    binaria y una unaria, dando como resultado el nombre de todos aquellos clientes que
@@ -186,13 +186,13 @@ venta= {cliente_id(fk), producto_id(fk), cantidad}
 
 5. Descripción de los productos que no se han vendido en México
 
-   ![select|50](img/ejemplo_5.png)
+   ![select|50](img/ejemplo_51.png)
 
    En este ejemplo se observa el uso del join y el operador diferencia.
 
 6. Descripción de los productos que fueron comprados por clientes mexicanos y españoles.
 
-   ![select|50](img/ejemplo_6.png)
+   ![select|50](img/ejemplo_61.png)
 
    En este ejemplo se observa el uso del operador intersección, se mostrará como resultado
    la descripción de todos aquellas productos que coincidan en ambas consultas.
@@ -200,7 +200,7 @@ venta= {cliente_id(fk), producto_id(fk), cantidad}
 7. Descripción de los productos que fueron comprados por clientes mexicanos o clientes
 españoles
 
-   ![select|50](img/ejemplo_7.png)
+   ![select|50](img/ejemplo_71.png)
 
    En este ejemplo se muestra el uso del operador unión, se mostrará como resultado la
    unión vertical de la descripción de los productos se tienen en ambas relaciones.
