@@ -3,58 +3,58 @@
 
 ## 6.4 Funciones de agregación (min, max, sum, avg, count)
 
-Las funciones de agregación
+Las funciones de agregación nos permiten efectuar operaciones sobre un conjunto de
+resultados, devolviendo un único valor. Los conjuntos de registros pueden ser agrupados
+por diversos criterios.
 
 * Permiten obtener un resultado basado en los valores contenidos en una columna de una
 tabla.
-* Únicamente se pueden utilizar en una consulta de resumen, puesto que manipulan los
-valores contenidos en los registros de la tabla.
 
 Las funciones de agregación son las siguientes:
 
 * `MIN`: devuelve el valor mínimo del campo que especifiquemos, se ignoran los valores
-nulos. Su sintáxis:
+nulos. Su sintaxis:
 
 ```sql
-    MIN([DISTINCT | ALL] campo)
+    min([distinct | all] campo)
 ```
 
 * `MAX`: devuelve el valor máximo del campo que especifiquemos, se ignoran los valores
-nulos. Su sintáxis:
+nulos. Su sintaxis:
 
 ```sql
-    MAX([DISTINCT | ALL] campo)
+    max([distinct | all] campo)
 ```
 
 * `SUM`: suma los valores del campo que especifiquemos. Sólo se puede utilizar en columnas
-numéricas, se omiten los valores nulos. Su sintáxis:
+numéricas, se omiten los valores nulos. Su sintaxis:
 
 ```sql
-    SUM([DISTINCT | ALL] campo)
+    sum([distinct | all] campo)
 ```
 
 * `AVG`: devuelve el valor promedio del campo que especifiquemos. Sólo se puede utilizar
-en columnas numéricas. Omite los valores nulos. Su sintáxis:
+en columnas numéricas. Omite los valores nulos. Su sintaxis:
 
 ```sql
-    AVG([DISTINCT | ALL] campo)
+    avg([distinct | all] campo)
 ```
 
-* `COUNT`: devuelve el número total de filas seleccionadas por la consulta. Su sintáxis:
+* `COUNT`: devuelve el número total de filas seleccionadas por la consulta. Su sintaxis:
 
 ```sql
-    COUNT({ * | [DISTINCT | ALL] campo})
+    count({ * | [distinct | all] campo})
 ```
 
 Todas estas funciones se aplican a una sola columna, que especificaremos entre paréntesis,
-excepto la función `COUNT`, que se puede aplicar a una columna o indicar un '$\ast$'. La
+excepto la función `count`, que se puede aplicar a una columna o indicar un '$\ast$'. La
 diferencia entre poner el nombre de una columna o un '$\ast$', es que en el primer caso no
 cuenta los valores nulos para dicha columna, y en el segundo si.
 
-* `DISTINCT` hace que la función considere únicamente valores no duplicados;
-* `ALL` hace que considere todos los valores, incluidos los duplicados. El valor por
-defecto es `ALL` por lo que no es necesario especificarlo.
-* Los tipos de datos para las funciones pueden ser `CHAR`, `VARCHAR2`, `NUMBER` o `DATE`.
+* `distinct` hace que la función considere únicamente valores no duplicados;
+* `all` hace que considere todos los valores, incluidos los duplicados. El valor por
+defecto es `all` por lo que no es necesario especificarlo.
+* Los tipos de datos para las funciones pueden ser `char`, `varchar2`, `number` o `date`.
 
 ### 6.4.1 Cláusula `GROUP BY`
 
@@ -62,7 +62,7 @@ Con ésta cláusula se indica él o los campos por los cuales se desea agrupar u
 registros.
 
 * Comúnmente esta agrupación va acompañada con una serie de funciones de agregación.
-* El o los campos por el cual se agrupa debe de incluirse en el `SELECT`
+* El o los campos por el cual se agrupa debe de incluirse en el `select`
 
 ### 6.4.2 Cláusula `GROUP BY .. HAVING`
 
@@ -103,7 +103,7 @@ siguientes tablas del esquema *human resource*:
 3. El salario máximo pagado a un empleado.
 
    ```sql
-   select MAX(salary)
+   select max(salary)
    from employees;
 
    MAX(SALARY)
@@ -115,7 +115,7 @@ siguientes tablas del esquema *human resource*:
 departamento.
 
    ```sql
-   select department_id, SUM(salary)
+   select department_id, sum(salary)
    from employees
    group by department_id;
 
@@ -138,7 +138,7 @@ departamento.
 5. Sueldo promedio por cada departamento.
 
    ```sql
-   select department_id, AVG(salary)
+   select department_id, avg(salary)
    from employees
    group by department_id;
 
@@ -161,7 +161,7 @@ departamento.
 6. Salario mínimo pagado por puesto.
 
    ```sql
-   select job_id, MIN(salary)
+   select job_id, min(salary)
    from employees
    group by job_id;
 
@@ -192,10 +192,10 @@ departamento.
 cuyo salario promedio sea mayor de $5000.
 
    ```sql
-   SELECT department_id, AVG(salary)
-   FROM employees
-   GROUP BY department_id
-   HAVING AVG(salary)>5000;
+   select department_id, avg(salary)
+   from employees
+   group by department_id
+   having avg(salary)>5000;
 
    DEPARTMENT_ID AVG(SALARY)
    ------------- -----------
