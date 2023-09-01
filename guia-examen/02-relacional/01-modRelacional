@@ -1,4 +1,4 @@
-# Diseño lógico de Bases de datos
+# 2. Diseño lógico de Bases de datos
 
 En el diseño lógico se genera un modelo relacional, el cual es obtenido a partir del
 modelo Entidad-Relación generado en el diseño conceptual. Este modelo fue propuesto por
@@ -9,12 +9,12 @@ tabla se le llama tupla y al conjunto de columnas de la tabla atributos.
 Existen varias notaciones utilizadas para representar el modelo relacional, pero la más
 utilizadas es la Crow's foot, la cual veremos a continuación.
 
-## Transformación del modelo Entidad-Relación al Modelo Relacional
+## 2.1 Transformación del modelo Entidad-Relación al Modelo Relacional
 
 Para transformar un modelo entidad-relación a modelo relacional seguiremos las siguientes
 reglas:
 
-### Entidad fuerte
+### 2.1.1 Entidad fuerte
 
 En el modelo relacional se utiliza el elemento tabla, se representa con un rectángulo
 como se muestra a continuación:
@@ -24,9 +24,9 @@ como se muestra a continuación:
 </p>
 
 En la parte superior del rectangulo, primera parte, se coloca la llave primaria de la
-tabla (clave primrari del MER) y en la parte inferior el resto de los atributos:
+tabla (clave principal del MER) y en la parte inferior el resto de los atributos:
 
-a) En claves candidatas se establece restricción de unicidad
+a) En claves candidatas se establece restricción de unicidad (unique)
 
 b) Atributos compuestos se colocan en forma individual
 
@@ -35,7 +35,8 @@ tabla como clave foránea a la nueva tabla.
 
 d) Atributo opcional se establace como atributo con valores nulos NULL.
 
-e) Los atributos derivados se establecen como atributos calculados.
+e) Los atributos derivados se establecen como atributos calculados, o como columnas
+virtuales en el caso de Oracle.
 
 e) Se establecen restricciones sobre atributos.
 
@@ -53,13 +54,13 @@ Su representación en modelo relacional es:
   <img src="img/entidad-relacional.jpg" >
 </p>
 
-### Relaciones
+### 2.2.2 Relaciones
 
 * Relación uno a muchos 1:M
 
 Se conoce como relación no identificativa y se representan con una línea discontinua.
 La llave primaria (pk) de la tabla padre se pasa como un atributo en la tabla hija y se
-denomina llave foranea (fk)
+denomina llave foránea (fk)
 
 Ejemplo:
 
@@ -77,8 +78,8 @@ Su presentanción en el modelo relacional es:
 
 La llave primaria de una de las entidades se propaga a la otra entidad como llave foránea
 y esta última se establece como llave candidata para conservar la unicidad. Si una entidad
-tiene cardinamidad mínima cero, esta entidad recibe la llave primaria como llave foranea,
-si la ccardinalidad mínima es la misma en ambas entidades dependera el contexto.
+tiene cardinalidad mínima cero, esta entidad recibe la llave primaria como llave foránea,
+si la cardinalidad mínima es la misma en ambas entidades dependerá el contexto.
 
 Ejemplo:
 
@@ -94,8 +95,8 @@ Su representación en el modelo relacional es:
 
 * Relación muchos a muchos M:M
 
-Las relaciones muchos a muchos generan una nueva tabla, esta nueva taba tendrá una llave
-primaria compuesta por las llaves primarias de las entidades de la relación. Si la
+Las relaciones muchos a muchos generan una nueva tabla, esta nueva tabla tendrá una llave
+primaria compuesta formada por las llaves primarias de las entidades de la relación. Si la
 relación tiene atributos, éstos son colocados en la nueva tabla.
 
 Ejemplo:
@@ -112,7 +113,7 @@ Su representación en el modelo relacional es:
 
 * Relaciones recursivas
 
-La llave primaria pasa a la misma tabla como llave foranea.
+La llave primaria pasa a la misma tabla como llave foránea.
 
 Ejemplo:
 
@@ -126,10 +127,10 @@ Su representación en el modelo relacional es:
   <img src="img/recursiva.jpg" >
 </p>
 
-### Entidad débil
+### 2.2.3 Entidad débil
 
 Se crea una tabla con sus atributos y se pasa la llave primaria de la entidad fuerte de
-la que depende como llave foranea. La llave primaria de la nueva tabla es una llave
+la que depende como llave foránea. La llave primaria de la nueva tabla es una llave
 compuesta la cual se formará por la llave primaria de la entidad fuerte y el
 discriminante de la entidad débil.
 
