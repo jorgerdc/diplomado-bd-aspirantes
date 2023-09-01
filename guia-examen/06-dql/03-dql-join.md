@@ -2,8 +2,8 @@
 
 ## 6.3 SQL Joins (inner, outer, natural, self, cross)
 
-Los JOINS se utilizan para recuperar datos de varias tablas. Se realiza un JOIN cada vez
-que se unen dos o más tablas en una instrucción SQL.
+El operador Join se utilizan para recuperar datos de varias tablas. Se realiza un JOIN
+cada vez que se unen dos o más tablas en una instrucción SQL.
 
 Hay diferentes tipos de joins:
 
@@ -17,16 +17,16 @@ Hay diferentes tipos de joins:
 
 ### 6.3.1 `INNER JOIN`
 
-Es el tipo de join más común. `INNER JOIN` devuelve todas los registros de varias tablas
+Es el tipo de join más común. `INNER JOIN` devuelve todos los registros de varias tablas
 donde se cumple la condición de combinación.
 
-La sintaxis para `INNER JOIN` es:
+La sintaxis para `inner join` es:
 
 ```sql
-SELECT columnas
-FROM tabla1 
-INNER JOIN tabla2
-ON tabla1.columna = tabla2.columna;
+select columnas
+from tabla1 
+inner join tabla2
+on tabla1.columna = tabla2.columna;
 ```
 
 <p align="center"\><img src=img/fig_1.png width="200"\>
@@ -43,26 +43,29 @@ inner join proveedor pe
 on po.producto_id=pe.producto_id;
 ```
 
-En este ejemplo se mostrarán todas los registro de los atributos producto_id y
-proveedor_id de las tablas de proveedor y producto donde haya un valor de producto_id
-coincidente en las tablas de proveedor y producto.
+En este ejemplo se mostrarán todas los registro de los atributos `producto_id` y
+`proveedor_id` de las tablas de `proveedor` y `producto` donde haya un valor de
+`producto_id` coincidente en las tablas de `proveedor` y `producto`.
 
 ### 6.3.2 `LEFT OUTER JOIN`
 
-Este tipo de join devuelve todas las filas de la tabla de la IZQUIERDA especificada en la
-condición `ON` y solo aquellas filas de la otra tabla donde los campos combinados son
-iguales (se cumple la condición de combinación).
+Este tipo de Join incluye todos los registros que se obtendrían al realizar un
+`inner join`, y de forma adicional, todos los registros de la tabla que aparece a la
+izquierda de la cláusula `join` que cumplan con las condiciones de la cláusula `where`
+sin importar si cumplen o no con la condición de la cláusula `on`. Dicho de otra forma,
+obtiene todos los registros de la tabla izuquierda sin importar si tienen correspondencia
+con los registros de la tabla derecha.
 
-La sintaxis para `LEFT OUTER JOIN` es:
+La sintaxis para `left outer join` es:
 
 ```sql
-SELECT columnas
-FROM tabla1
-LEFT [OUTER] JOIN tabla2
-ON tabla1.columna = tabla2.columna;
+select columnas
+from tabla1
+left [outer] join tabla2
+on tabla1.columna = tabla2.columna;
 ```
 
-La palabra clave `LEFT OUTER JOIN` se puede reemplazar por `LEFT JOIN`.
+La palabra clave `left outer join` se puede reemplazar por `left join`.
 
 <p align="center"\><img src=img/fig_2.png width="200"\></p>
 
@@ -88,20 +91,23 @@ resultados.
 
 ### 6.3.3 `RIGHT OUTER JOIN`
 
- Este tipo de combinación devuelve todas las filas de la tabla de la DERECHA especificada
- en la condición `ON`y solo aquellas filas de la otra tabla donde los campos combinados
- son iguales (se cumple la condición de combinación).
+ Este tipo de Join incluye todos los registros que se obtendrían al realizar un
+ `inner join`, y de forma adicional, todos los registros de la tabla que aparece a la
+ derecha de la cláusula `join` que cumplan con las condiciones de la cláusula `where` sin
+ importar si cumplen o no con la condición de la cláusula `on`. Dicho de otra forma,
+ obtiene todos los registros de la tabla derecha sin importar si tienen correspondencia
+ con los registros de la tabla izquierda.
 
-La sintaxis para `RIGHT OUTER JOIN` es:
+La sintaxis para `right outer join` es:
 
 ```sql
-SELECT columnas
-FROM tabla1
-RIGHT [OUTER] JOIN tabla2
-ON tabla1.columna = tabla2.columna;
+select columnas
+from tabla1
+right [outer] join tabla2
+on tabla1.columna = tabla2.columna;
 ```
 
-La palabra clave `RIGHT OUTER JOIN` se puede reemplazar por `RIGHT JOIN`.
+La palabra clave `right outer join` se puede reemplazar por `right join`.
 
 <p align="center"\><img src=img/fig_3.png width="200"\></p>
 
@@ -117,28 +123,28 @@ right outer join pedido pe
 on pv.proveedor_id = pe.proveedor_id;
 ```
 
-En este ejemplo se mostraránn todas los registros de la tabla de pedido y solo aquellos
-registros de la tabla de proveedor donde el atributo proveedor_id es igual.
+En este ejemplo se mostrarán todas los registros de la tabla de `pedido` y solo aquellos
+registros de la tabla de `proveedor` donde el atributo `proveedor_id` es igual.
 
-Si un valor de pedido_id en la tabla de pedido no existe en la tabla de proveedor, el
-atributo proveedor_nombre de la tabla proveedor se mostrará como null en el conjunto de
+Si un valor de `pedido_id` en la tabla de `pedido` no existe en la tabla de `proveedor`, el
+atributo `proveedor_nombre` de la tabla `proveedor` se mostrará como null en el conjunto de
 resultados.
 
 ### 6.3.4 `FULL OUTER JOIN`
 
-Este tipo de join devuelve todas los registros de la tabla de la IZQUIERDA y la tabla de
-la DERECHA con valores nulos donde no se cumple la condición de unión.
+Este tipo de join devuelve todas los registros de la tabla de la izquierda y la tabla de
+la derecha con valores nulos donde no se cumple la condición de unión.
 
-La sintaxis para `FULL OUTER JOIN` es:
+La sintaxis para `full outer join` es:
 
 ```sql
-SELECT columnas
-FROM tabla1
-FULL [OUTER] JOIN tabla2
-ON tabla1.columna = tabla2.columna;
+select columnas
+from tabla1
+full [outer] join tabla2
+on tabla1.columna = tabla2.columna;
 ```
 
-La palabra clave `FULL OUTER JOIN` se puede reemplazar por `FULL JOIN`.
+La palabra clave `full outer join` se puede reemplazar por `full join`.
 
 <p align="center"\><img src=img/fig_4.png width="200"\></p>
 
@@ -154,15 +160,15 @@ full outer join pedido pe
 on pv.proveedor_id = pe.proveedor_id;
 ```
 
-En este ejemplo se mostrarán todas los registros de la tabla de proveedor y todas los
-registros de la tabla de pedido y dónde no se cumpla la condición de unión, se mostrarán
+En este ejemplo se mostrarán todas los registros de la tabla de `proveedor` y todas los
+registros de la tabla de `pedido` y dónde no se cumpla la condición de unión, se mostrarán
 nulls en esos registros en el conjunto de resultados.
 
-Si un valor de proveedor_id en la tabla de proveedor no existe en la tabla de pedido,
-todos los registros del atributo pedido_fecha de la tabla de pedido se mostrarán como null
-en el conjunto de resultados. Si un valor de proveedor_id en la tabla de pedido no existe
-en la tabla de proveedor, todos los registros de los atributos de la tabla de proveedor se
-mostrarán como null en el conjunto de resultados.
+Si un valor de `proveedor_id` en la tabla de `proveedor` no existe en la tabla de `pedido`,
+todos los registros del atributo `pedido_fecha` de la tabla de `pedido` se mostrarán como
+null en el conjunto de resultados. Si un valor de `proveedor_id` en la tabla de `pedido`
+no existe en la tabla de `proveedor`, todos los registros de los atributos de la tabla de
+`proveedor` se mostrarán como null en el conjunto de resultados.
 
 ### 6.3.5 `NATURAL JOIN`
 
@@ -173,12 +179,12 @@ en ambas tablas.
 `NATURAL JOIN` puede ser `INNER JOIN`, `LEFT OUTER JOIN` o `RIGHT OUTER JOIN`. El valor
 predeterminado es `INNER JOIN`.
 
-La sintaxis para `NATURAL JOIN` es:
+La sintaxis para `natural join` es:
 
 ```sql
-SELECT columnas
-FROM tabla1 NATURAL [ { LEFT | RIGHT } [ OUTER ] | INNER ] 
-JOIN tabla2;
+select columnas
+from tabla1 natural [ { left | right } [ outer ] | inner ] 
+join tabla2;
 ```
 
 Ejemplo:
@@ -189,15 +195,15 @@ from producto
 natural join pedido;
 ```
 
-En este ejemplo existe en ambas tablas el atributo producto_id, por lo que
-se mostrarán los registros del atributo producto_nombre y pedido_id de aquellos productos
-que coinciden en ambas tablas.
+En este ejemplo existe en ambas tablas el atributo `producto_id`, por lo que
+se mostrarán los registros del atributo `producto_nombre` y `pedido_id` de aquellos
+productos que coinciden en ambas tablas.
 
 ### 6.3.6 `SELF JOIN`
 
-Es un join de una tabla consigo misma. Esta tabla aparece dos veces en la cláusula `FROM`
-y va seguida de alias de la tabla que califican los nombres de las columnas en la
-condición de combinación. Para realizar un `SELF JOIN`, se combinan y devuelve las filas
+Es un `join` de una tabla consigo misma. Esta tabla aparece dos veces en la cláusula `from`
+y va seguida del alias de la tabla que califican los nombres de las columnas en la
+condición de combinación. Para realizar un `self join`, se combinan y devuelve las filas
 de la tabla que cumplen la condición de unión.
 
 `SELF JOIN` puede ser `INNER JOIN`, `LEFT OUTER JOIN` o `RIGHT OUTER JOIN`. El valor
@@ -206,11 +212,14 @@ predeterminado es `INNER JOIN`.
 La sintaxis para `SELF JOIN` es:
 
 ```sql
-SELECT t1.columna, t2.columna
-FROM tabla1 t1 [ { LEFT | RIGHT } [ OUTER ] | INNER ]
-JOIN tabla1 t2
-ON t1.columna=t2.columna;
+select t1.columna, t2.columna
+from tabla1 t1 [ { left | right } [ outer ] | inner ]
+join tabla1 t2
+on t1.columna=t2.columna;
 ```
+
+Observemos que no existe una cláusula `self join` dentro de la sintaxis, este tipo de
+`join` es solo conceptual.
 
 Ejemplo:
 
@@ -222,20 +231,20 @@ on e1.empleado_id=e2.empleado_sup;
 ```
 
 En este ejemplo se mostrará a todos los empleados y su empleado supervisor, considerando
-que dicha información se encuentra en la misma tabla empleado.
+que dicha información se encuentra en la misma tabla `empleado`.
 
 ### 6.3.7 CROSS JOIN
 
-Es una operación `JOIN` que genera el producto cartesiano de dos tablas. A diferencia de
-otros operadores `JOIN`, no le permite especificar una cláusula de unión. `CROSS JOIN` no
-lleva la cláusula `ON`, sin embargo, puede especificar una cláusula `WHERE` en la
-instrucción `SELECT`.
+Es una operación `join` que genera el producto cartesiano de dos tablas. A diferencia de
+otros operadores `join`, no le permite especificar una cláusula de unión. `cross join` no
+lleva la cláusula `on`, sin embargo, puede especificar una cláusula `where` en la
+instrucción `select`.
 
 La sintaxis para CROSS JOIN es:
 
 ```sql
-SELECT columnas
-FROM tabla1 CROSS JOIN tabla2;
+select columnas
+from tabla1 cross join tabla2;
 ```
 
 Ejemplo:
