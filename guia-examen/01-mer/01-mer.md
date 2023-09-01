@@ -75,8 +75,8 @@ mediante una línea.
 
 <p align="center"><img src="img/atributo-simple.png"/></p>
 
-* Compuesto, se pueden dividir en atributos más pequeños (atributos con significados independientes), como el domicilio ya que se puede subdividir en calle, número colonia
-y alcaldía. Gráficamente se crea el atributo y se unen a él mediante una línea los
+* Compuesto, se pueden dividir en atributos más pequeños (atributos con significados independientes), como el domicilio ya que se puede subdividir en calle, número
+colonia y alcaldía. Gráficamente se crea el atributo y se unen a él mediante una línea los
 atributos más pequeños.
 
 <p align="center"><img src="img/atributo-compuesto.png"/></p>
