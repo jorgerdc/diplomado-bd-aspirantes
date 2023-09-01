@@ -28,9 +28,9 @@ Ejemplo:
 select add_months(sysdate,4) 
 from dual;
 
-ADD_MONT
---------
-20/12/23
+ADD_MONTHS
+----------
+  20/12/23
 ```
 
 `EXTRACT`. Extrae el tipo de dato (año, mes, día, hora, minuto, segundo) de una fecha
@@ -53,7 +53,7 @@ hará es redondear a la fecha más próxima
 Ejemplo:
 
 ```sql
-select round(to_date( '25/12/2023'),'MONTH') fecha
+select round(to_date( '25/12/2023'),'month') fecha
 from dual;
 
 FECHA
@@ -64,7 +64,7 @@ FECHA
 `TRUNC`. Esta función truncará el resultado devolviendo a la fecha original.
 
 ```sql
-select trunc(to_date('25/12/2022'),'MONTH') fecha
+select trunc(to_date('25/12/2022'),'month') fecha
 from dual;
 
 FECHA
@@ -115,22 +115,22 @@ numéricas además de fechas.
 Ejemplo:
 
 ```sql
-SELECT last_name,
-       (SYSDATE-hire_date)/7,
-       SYSDATE+3,
-       SYSDATE-3,
-       SYSDATE-(SYSDATE+6)     
-FROM employees
-WHERE  department_id = 60;
+select last_name,
+       (sysdate-hire_date)/7,
+        sysdate-3,
+        sysdate+3,
+        sysdate-(sysdate+6)     
+from employees
+where department_id = 60;
 
 
-LAST_NAME                 (SYSDATE-HIRE_DATE)/7 SYSDATE- SYSDATE+ SYSDATE-(SYSDATE+6)
-------------------------- --------------------- -------- -------- -------------------
-Hunold                               920.695299 17/08/23 23/08/23                  -6
-Ernst                                848.838156 17/08/23 23/08/23                  -6
-Austin                               948.123871 17/08/23 23/08/23                  -6
-Pataballa                            915.981014 17/08/23 23/08/23                  -6
-Lorentz                              863.552442 17/08/23 23/08/23                  -6
+LAST_NAME                 (SYSDATE-HIRE_DATE)/7 SYSDATE-3 SYSDATE+3 SYSDATE-(SYSDATE+6)
+------------------------- --------------------- --------- --------- -------------------
+Hunold                               920.695299  17/08/23  23/08/23                  -6
+Ernst                                848.838156  17/08/23  23/08/23                  -6
+Austin                               948.123871  17/08/23  23/08/23                  -6
+Pataballa                            915.981014  17/08/23  23/08/23                  -6
+Lorentz                              863.552442  17/08/23  23/08/23                  -6
 ```
 
 ### 6.5.2 Funciones para manejo de números
@@ -138,7 +138,7 @@ Lorentz                              863.552442 17/08/23 23/08/23               
 Las funciones numéricas aceptan parámetros de entrada de tipo numérico y retornan valores
 numéricos. Algunas de ellas son:
 
-`ROUND`. La función `ROUND (m, n)` acepta como entrada un número y devuelve como salida
+`ROUND`. La función `round(m, n)` acepta como entrada un número y devuelve como salida
 otro número redondeado a un número específico de decimales que se indica en el segundo
 parámetro de la función. Si no se especifica el número de decimales a mostrar, la función
 devolverá el número redondeado al entero más próximo. Si el número de decimales a
@@ -161,8 +161,8 @@ from dual;
             20             20.4             20.3            20.35                 0             200
 ```
 
-`TRUNC`. La función TRUNC (m, n) permite indicar el número de decimales a truncar a la
-derecha o izquierda del separador decimal. La función TRUNC simplemente elimina o trunca
+`TRUNC`. La función `trunc(m, n)` permite indicar el número de decimales a truncar a la
+derecha o izquierda del separador decimal. La función `trunc` simplemente elimina o trunca
 los dígitos, es decir, no realiza un redondeo.
 
 Ejemplo:
@@ -181,13 +181,13 @@ from dual;
             20             20.3             20.3            20.35                 0             200
 ```
 
-`FLOOR`. La función FLOOR (m) redondea una expresión numérica no entera al siguiente
+`FLOOR`. La función `floor(m)` redondea una expresión numérica no entera al siguiente
 entero inferior.
 
 Ejemplo:
 
 ```sql
-select (floor (3.5))
+select (floor(3.5))
 from dual;
 
 (FLOOR(3.5))
@@ -195,7 +195,7 @@ from dual;
            3
 ```
 
-`MOD`. La función `MOD (m, n)` obtiene el residuo del resultado de dividir m entre n.
+`MOD`. La función `mod(m, n)` obtiene el residuo del resultado de dividir m entre n.
 
 Ejemplo:
 
@@ -226,7 +226,7 @@ from dual;
 
 Algunas de las funciones exclusivas para el manejo de cadenas son las siguientes
 
-`ASCII`. La función `ASCII` devuelve el código numérico que representa el carácter pasado
+`ASCII`. La función `ascii` devuelve el código numérico que representa el carácter pasado
 por parámetro. Si se ingresa más de un carácter como parámetro a la función esta solo
 devolverá el valor `ascii` para el primer carácter de la cadena e ignorará todos los demás
 caracteres después del primero.
@@ -250,9 +250,9 @@ Ejemplo:
 select chr(116), chr(84) 
 from dual; 
 
-C C
-- -
-t T
+CHR CHR
+--- ---
+  t   T
 ```
 
 `CONCAT`. Pemite concatenar dos cadenas y juntarlas en una sola.
@@ -304,7 +304,7 @@ este es un ejemplo este es un ejemplo
 hasta completar la longitud deseada (Sólo cuando la cadena pasada por parámetro no es un
 valor nulo). La cadena será formateada con n caracteres a la izquierda. Si  la longitud
 es más pequeña que la cadena original, la funcion LPAD truncará el tamaño de la cadena a
-el tamaño de la longitud izquierda. Si el parámetro es omitido la función `LPAD`
+el tamaño de la longitud izquierda. Si el parámetro es omitido la función `lpad`
 completará la cadena resultante con espacion en blanco al lado izquierdo.
 
 Ejemplo:
@@ -323,8 +323,8 @@ LPAD('0 LP LPAD('00 LPAD('00 LPAD(
 ```
 
 `LTRIM`. Remueve todos los caracteres especificados al lado izquierdo de la cadena. Si el
-parámetro es omitido, la funcion `LTRIM` removerá todos los espacios en blanco al lado
-izquierdo de CADENA.
+parámetro es omitido, la funcion `ltrim` removerá todos los espacios en blanco al lado
+izquierdo de la cadena.
 
 ```sql
 select ltrim('   Hola'),
@@ -337,27 +337,27 @@ select ltrim('   Hola'),
 from dual;
 
 
-LTRI LTRI LTRIM( LTRIM('1231 LTRIM('1 LTRIM LTRIM
----- ---- ------ ----------- -------- ----- -----
-Hola Hola Prueba 123123Total Total123 Total Total
+LTRIM LTRIM LTRIM( LTRIM('1231 LTRIM('1 LTRIM LTRIM
+----- ----- ------ ----------- -------- ----- -----
+ Hola  Hola Prueba 123123Total Total123 Total Total
 ```
 
 `SUBSTR`. Permite extraer una parte de una cadena o subcadena de una cadena. La sintaxis
 es la siguiente:
 
 ```sql
-   SUBSTR(CADENA, POSICION_INICIAL, [LONGITUD])
+   substr (CADENA, POSICION_INICIAL, [LONGITUD])
 ```
 
 CADENA es la cadena fuente pasada por parametro a la funcion.
 POSICION_INICIAL es la posicion inicial en la CADENA a partir de la cual iniciará la
-extraccion de la subcadena. La posición inicial de CADENA es 1.
+extracción de la subcadena. La posición inicial de CADENA es 1.
 
 LONGITUD es opcional. Indica el número de caracteres a extraer. Si este parámetro es
-omitido, la función `SUBSTR` retornara la cantidad de caracteres restantes de CADENA a
+omitido, la función `substr` retornará la cantidad de caracteres restantes de CADENA a
 partir de la POSICION_INICIAL.
 
-* Si POSICION_INICIAL es 0, la función SUBSTR fijará a 1 la POSICION_INICIAL.
+* Si POSICION_INICIAL es 0, la función `substr` fijará a 1 la POSICION_INICIAL.
 
 * Si POSICION_INICIAL es un número positivo, la función empezará a contrar desde el inicio
 de la cadena y hacia adelante, el número de posiciones indicadas en POSICION_INICIAL
@@ -384,27 +384,27 @@ es una prueba
 
 SQL> select substr('Esta es una prueba',1,4) from dual;
 
-SUBS
-----
-Esta
+SUBSTR
+------
+  Esta
 
 SQL> select substr('Esta es una prueba',-3,3) from dual;
 
-SUB
----
-eba
+SUBSTR
+------
+   eba
 
 SQL> select substr('Esta es una prueba',-6,3) from dual;
 
-SUB
----
-pru
+SUBSTR
+------
+   pru
 
 SQL> select substr('Esta es una prueba',-8,2) from dual;
 
-SU
---
-a
+SUBSTR
+------
+     a
 ````
 
 Para mayor información consulte en:
