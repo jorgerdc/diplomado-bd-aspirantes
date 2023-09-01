@@ -3,7 +3,7 @@
 El lenguaje de definición de datos (en inglés Data Definition Language, o DDL),
 es el que se encarga de la modificación de la  estructura de los objetos de la
 base de datos. Incluye órdenes para modificar, borrar o definir las tablas en
-las que se almacenan las base de datos.
+las que se almacenan las bases de datos.
 Existen tres operaciones básicas: `create`, `alter` y `drop`.
 
 ## 3.1 Sentencia `create`
@@ -12,9 +12,12 @@ Esta sentencia crea un objeto dentro de la base de datos. Puede ser un tablespac
 una tabla, un índice, una secuencia (objeto de base de datos que permite la generación
 automática de valores), una vista materializada, una tabla de índice organizado,
 un usuario, un cluster, una función, un procedimiento, un trigger, un sinónimo (alias para
-los objetos de bases de datos de otro servidor, base de datos, esquema).
+los objetos de bases de datos de otro servidor, base de datos, esquema, etc.).
 
 ### 3.1.1 Ejemplos sentencia `create`
+
+Las siguientes sentencias muestran creación de tablas, constraints, secuencia, vista
+sinónimo e indice.
 
 ```sql
 create table clientes
@@ -60,8 +63,6 @@ create table clientes
 
  create index indx_nom_prod
  on productos (nombre);
-
-
 ```
 
 ### 3.1.2 Algunas vistas del diccionario de datos que almacenan metadatos de los objetos
@@ -94,6 +95,10 @@ quitar campos (columnas) a una tabla, modificar el tipo de dato de un campo,
 modificar un trigger, agregar constraints a una tabla, etc.
 
 ### 3.2.1 Ejemplos sentencia `alter`
+
+Los ejemplos a continuación modifican una tabla agregando constraints y columna,
+modificando el nombre de una columna, su tipo de dato, eliminando una columna, 
+habilitando y deshabilitando constraints.
 
 ```sql
 alter table ventas add constraint pk_ventas
@@ -137,6 +142,9 @@ Esta sentencia elimina un objeto de la base de datos. Puede ser una tabla, vista
 índice, trigger, función, procedimiento o cualquier otro objeto.
 
 ### 3.3.1 Ejemplos Sentencia `drop`
+
+Las sentencias siguientes sirven para eliminar una tabla y secuencia, así como eliminar
+un sinónimo y un índice.
 
 ```sql
 drop table desglose_ventas;
