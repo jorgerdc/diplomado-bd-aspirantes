@@ -1,26 +1,23 @@
 # 4. Lenguaje de Manipulación de Datos (SQL-DML)
 
-El lenguaje de manipulación de datos (en inglés Data Manipulation Language, o DML).
-Permite a los usuarios introducir datos para posteriormente realizar tareas de consultas o
-modificación de los datos que contienen las Bases de Datos.
+El lenguaje de manipulación de datos (en inglés Data Manipulation Language, o DML),
+permite a los usuarios, introducir, modificar o eliminar  datos.
 
 Los elementos que se utilizan para manipular los datos, son los siguientes:
 
-    `select`, esta sentencia se utiliza para realizar
-    consultas sobre los datos. (Se contempla en parte
-    6 en Data Query Languaje, o DQL)
+`insert`, Esta sentencia permite incorporar nuevos registros a una tabla existente en la base de datos.
 
-    `insert`, con esta instrucción podemos insertar los valores en una base de datos.
+`update`, sirve para modificar los valores de uno o varios registros.
 
-    `update`, sirve para modificar los valores de uno o varios renglones.
-
-    `delete`, se utiliza para eliminar las filas de una tabla.
+`delete`, se utiliza para eliminar las filas de una tabla.
 
 ## 4.1 Sentencia `insert`
 
-Este comando crea un/os renglón/es dentro de una tabla de la base de datos.
+Esta sentencia permite incorporar nuevos registros a una tabla existente en la base de datos.
 
 ### 4.1.1 Ejemplos Sentencia `insert`
+
+Sentencias para ingresar registros de formas variadas, como por ejemplo con el orden de creación de columnas, omitiendo el nombre de columnas, incluye una sentencia insert con select.
 
     ```sql
 insert into clientes
@@ -59,6 +56,8 @@ Esta sentencia modifica un renglón dentro de una tabla de la base de datos.
 
 ### 4.2.1 Ejemplos sentencia `update`
 
+Las siguientes sentencias actualizan un  registro particular y varios que cumplen con la igualdad de genero Femenino.
+
      ```sql
 
 update clientes
@@ -80,6 +79,8 @@ Este comando elimina un/os renglón/es dentro de una tabla de la base de datos.
 
 ### 4.2.1 Ejemplos Sentencia `delete`
 
+Las sentencias a continuación eliminan un registro en particular, confirmando la transacción permanente con commit y se eliminan a todos los clientes, pero esa transacción no se lleva a cabo, por el comando rollback.
+
      ```sql
 
 delete clientes
@@ -91,4 +92,4 @@ delete clientes;
 
 rollback;
   
-    ```
+     ```
