@@ -1,6 +1,6 @@
 # 6.0 Lenguaje de Consulta de Datos (DQL)
 
-## 6.5 Funciones para manejo de fechas, números, cadenas
+## 6.5 Funciones para manejo de fechas, números y cadenas
 
 ### 6.5.1 Funciones para manejo de fechas
 
@@ -101,9 +101,9 @@ sesión.
 select current_date 
 from dual; 
 
-CURRENT_
---------
-20/08/23
+CURRENT_DATE
+------------
+    20/08/23
 ```
 
 ### 6.5.1.1 Operaciones Aritméticas con Fechas
@@ -132,8 +132,6 @@ Austin                               948.123871 17/08/23 23/08/23               
 Pataballa                            915.981014 17/08/23 23/08/23                  -6
 Lorentz                              863.552442 17/08/23 23/08/23                  -6
 ```
-
-#### 6.5.1.2
 
 ### 6.5.2 Funciones para manejo de números
 
@@ -230,7 +228,7 @@ Algunas de las funciones exclusivas para el manejo de cadenas son las siguientes
 
 `ASCII`. La función `ASCII` devuelve el código numérico que representa el carácter pasado
 por parámetro. Si se ingresa más de un carácter como parámetro a la función esta solo
-devolvera el valor `ascii` para el primer carácter de la cadena e ignorará todos los demas
+devolverá el valor `ascii` para el primer carácter de la cadena e ignorará todos los demás
 caracteres después del primero.
 
 Ejemplo:
