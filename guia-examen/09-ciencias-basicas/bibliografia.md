@@ -4,8 +4,6 @@
 
 ## Bibliografía
 
-### __Álgebra__
-
     1.- Goodfellow, I. (2016). Deep Learning. Massachusetts: MIT.
     2.- W.Swokowski, E. (1989). Cálculo con Geometría Analítica. California: Iberoamérica
     3.- Canavos, G. C. (1988). Probabilidad y Estadística Aplicaciones y Métodos. Edo.de México: McGRAW-HILL/Interamericana.

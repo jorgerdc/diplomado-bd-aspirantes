@@ -2,7 +2,7 @@
 
 ## Guía de conceptos básicos de ciencia de datos
 
-## 1. Algebra
+## 1. Álgebra
 
 ### 1.1 Operaciones con matrices
 
