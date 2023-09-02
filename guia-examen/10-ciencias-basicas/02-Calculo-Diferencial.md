@@ -7,7 +7,7 @@
 ### 2.1 Definición de derivada
 
 Sea _f_ una función definida en un intervalo abierto que contiene a _a_. La derivada 
-de _f_ en _a_, denotada por _f´(a), esta dada por:
+de _f_ en _a_, denotada por _f´(a), está dada por:
 
 <p align ="center"><img src="imagenes/Calculo_dif/def_deri.png"></p>
 
@@ -31,7 +31,7 @@ Sea _y = g(u), u = f(x)_, entonces la derivada de _y = (g ° f)(x) = g(f(x)) se 
 
 <p align ="center"><img src="imagenes/Calculo_dif/cade_deri.png"></p>
 
-### 2.2 Derivadas de Funciones Implícitas
+### 2.2 Derivadas de funciones implícitas
 
 Una función implícita se expresa en términos de _x_ y _y_
 
@@ -43,12 +43,12 @@ Ejemplo:
 Para proceder a derivar una función implícita, se deriva término a término los elementos
 de la igualdad con respecto a la variable que se indica, y se despeja la derivada.
 
-### 2.3 Derivadas de Orden superior
+### 2.3 Derivadas de orden superior
 
-Sea _y = f(x)_ una función de orden superior, se derivará tantas veces como lo indique
+Sea _y = f(x)_ una función de orden superior se derivará tantas veces como lo indique
 el orden requerido.
 
-La derivada de primer orden esta representada por: 
+La derivada de primer orden está representada por: 
 
 <p align ="center"><img src="imagenes/Calculo_dif/prim_deri.png"></p>
 
@@ -62,4 +62,4 @@ Para calcular la enésima derivada de una función se denota por:
 
 <p align ="center"><img src="imagenes/Calculo_dif/ene_deri.png"></p>
 
-[Bibliografía](bibliografía.md)
+[Bibliografía](bibliografia.md)
