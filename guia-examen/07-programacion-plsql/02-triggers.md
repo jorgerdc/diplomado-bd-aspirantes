@@ -14,7 +14,7 @@
 
 Representan el tipo de trigger más común y usado. El trigger se ejecuta cuando se realiza
 una operación `insert`, `update` o `delete` sobre un dato que pertenece a una tabla.  El
-trigger se asocia a la tabla (no a los datos). En esta categoría un trigger pueden ser
+trigger se asocia a la tabla (no a los datos). En esta categoría un trigger puede ser
 útil para:
 
 * Auditoría (monitorear y controlar quién y cuándo se modifica un dato).
