@@ -32,7 +32,7 @@ Ejemplos:
 ```
 
 Las siguientes opciones son las más comunes. Para mayores detalles, se puede
-consultar  el manual del comando empleando la instricción `man find`
+consultar  el manual del comando empleando la instrucción `man find`
 
 * Mostrar los archivos que terminen con `.man`
 
@@ -118,8 +118,8 @@ $ man ls | wc -l
 
 ### 8.5.3 grep
 
-El comando `grep` selecciona las lineas de texto que contengan un patrón que podemos definir
-con expresiones regulares. Se puede usar para filtrar las lineas de un archivo de disco o
+El comando `grep` selecciona las líneas de texto que contengan un patrón que podemos definir
+con expresiones regulares. Se puede usar para filtrar las líneas de un archivo de disco o
 el texto que coja de la entrada estándar mediante el uso del concepto de pipeline
 
 Opciones más útiles de grep
@@ -127,9 +127,9 @@ Opciones más útiles de grep
 * `-v`: Muestra las que NO coinciden con el patrón
 * `-l`: Sólo indica el nombre del fichero donde ha encontrado alguna coincidencia
 * `-w`: El patrón tiene que ser una palabra independiente
-* `-n`: Indica el número de linea donde ha encontrado el patrón
+* `-n`: Indica el número de línea donde ha encontrado el patrón
 * `-i`: No distingue entre mayúscula y minúscula
-* `-c`: Muestra la cantidad de lineas que cumplen con el patrón
+* `-c`: Muestra la cantidad de líneas que cumplen con el patrón
 * `-r`: Busca en los archivos de forma recursiva
 
 Ejemplos de uso del comando grep
@@ -139,20 +139,20 @@ grep alumno /etc/passwd
 
 ```
 
-busca el usuario alumno dentro del fichero passwd
+busca al usuario `alumno` dentro del archivo `passwd`
 
 ```bash
 grep -v deb-src /etc/apt/sources.list
 
 ```
 
-selecciona del fichero sources.list las lineas que NO tienen el texto deb-src
+selecciona del archivo `sources.list` las líneas que NO tienen el texto `deb-src`
 
 ```bash
 history | grep ssh
 ```
 
-busca las lineas que contengan la palabra ssh dentro del historial de comandos.
+busca las líneas que contengan la palabra `ssh` dentro del historial de comandos.
 
 El siguiente documento muestra una lista de otros comandos comúnmente empleados.
 [Lista de comandos](https://www.freecodecamp.org/espanol/news/comandos-de-linux/)

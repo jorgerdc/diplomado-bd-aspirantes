@@ -14,7 +14,7 @@ Los archivos se pueden clasificar en 3 grupos:
 1. Archivos ordinarios: contienen información, como programas, imágenes, texto, etc.
 2. Directorios: Los directorios son simplemente archivos cuyo contenido es la
    relación de los archivos y directorios que hay en su interior.
-3. Archivos especiales: on los archivos que representan a los dispositivos de
+3. Archivos especiales: son los archivos que representan a los dispositivos de
    hardware como la impresora, el disco, etc.
 
 GNU/Linux soporta varios tipos de sistemas de archivos:
@@ -292,9 +292,9 @@ comando [opción...] [archivo...]
 
 ### 8.4.10 Enlaces simbólicos
 
-Un enlace simbólico no es más que un archivo que contiene el nombre de otro fichero o
-directorio, al cual apunta. Cuando usamos un enlace simbólico en un comando, este en
-realidad trabaja con el fichero cuya ruta y nombre está en el interior del enlace.
+Un enlace simbólico contiene una referencia a un archivo o directorio real.
+Cuando usamos un enlace simbólico en un comando, este en
+realidad trabaja con el archivo cuya ruta y nombre está en el interior del enlace.
 
 Para crear un enlace simbólico se usa el comando ln con la opción `-s`.
 
@@ -322,8 +322,8 @@ lrwxrwxrwx 1 admin admin   15 Aug 28 19:20 myfile.txt -> /tmp/myfile.txt
 
 ### 8.4.11 El comando mv, rm
 
-El comando `mv` sirve para mover archivo y directorios a otros directorios y para
-cambiarles el nombre.
+El comando `mv` sirve para mover archivos y directorios a otros directorios,
+también es utilizado para cambiar su nombre.
 
 ```bash
 ~$ mv carta.txt solicitud.txt recetas documentos

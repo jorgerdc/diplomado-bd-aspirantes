@@ -23,7 +23,7 @@ Sus características principales son:
 * Portabilidad, capacidad multi-usuario y multi-tarea, su eficiencia
 * Alta seguridad, eficiencia en tareas que implican acceso a redes.
 
-La filosofía de Unix esta basada en los principios de  minimalismo y modularidad: hacer
+La filosofía de Unix está basada en los principios de  minimalismo y modularidad: hacer
 muchos programas que hagan una sola cosa  bien hecha y que, al comunicarse entre sí,
 ejecuten tareas más complejas.
 
@@ -69,7 +69,7 @@ directorios pueden contener otros directorios llamados **subdirectorios**.
 
 ## 8.2 GNU/Linux
 
-A principios de los 90s, Linus Torvalds comenzo con la escritura de un sistema operativo
+A principios de los 90s, Linus Torvalds comenzó con la escritura de un sistema operativo
 que pudiera ejecutarse en una computadora personal, que cualquier usuario pudiera utilizar.
 
 Al mismo tiempo, ya se desarrollaba otro proyecto con la intención de crear un sistema
@@ -174,7 +174,7 @@ default los comandos se ejecutan de forma síncrona (en primer plano - foregroun
 por lo que el usuario debe esperar a que  el proceso termine antes de liberar
 el command prompt.
 
-Es importante mencionar que prácticamente todo lo que se escribe el Linux es
+Es importante mencionar que prácticamente todo lo que se escribe en Linux es
 sensible a minúsculas y mayúsculas: comandos, directorios, etc. Ejemplo
 
 ```bash
@@ -213,7 +213,7 @@ para que el usuario pueda interactuar con el sistema y acceder a sus recursos.
 
 El shell realiza una administración de estos elementos, datos, variables y
 configuraciones en una área denominada **entorno**. Esta área se crea cada vez
-que el usuario inicia sesión. Entro otras cosas, este entorno contiene los valores
+que el usuario inicia sesión. Entre otras cosas, este entorno contiene los valores
 de ciertas variables que definen las propiedades del sistema llamadas
 **variables de entorno**.
 
@@ -243,7 +243,7 @@ MANDATORY_PATH=/usr/share/gconf/mate.mandatory.path
 #### 8.3.4.1 Variables de entorno frecuentes
 
 * `PATH`: Contiene una lista de directorios separados por `:` donde se encuentran los archivos ejecutables (comandos), o los scripts. Al proporcionar un comando en el command prompt, el shell hará una búsqueda del comando capturado en los directorios configurados para poder localizarlo y ejecutarlo.
-* `SHELL`: Describe el interprete shell que se empleará para procesar comandos.
+* `SHELL`: Describe el intérprete shell que se empleará para procesar comandos.
    En la mayoría de los casos, será `bash`.
 * `TERM`: Especifica el tipo de terminal a emular cuando se ejecuta el shell.
 * `USER`: El usuario que inició sesión actualmente.

@@ -37,7 +37,7 @@ login_id:clave_codificada:UID:GID:varios:directorio_de_entrada:shell
 ```
 
 El primer campo contiene el nombre de login del usuario. El segundo está reservado para la
-contraseña del usuario, aparece una `x`, el sistema almacena las contraseañas en
+contraseña del usuario, aparece una `x`, el sistema almacena las contraseñas en
 `/etc/shadow`. Cuando un usuario se identifica con su contraseña, esta se codifica y se
 compara con la contraseña almacenada en `/etc/shadow`; si ambas coinciden, se le
 permite al usuario iniciar la sesión.
@@ -69,7 +69,7 @@ Cada fichero tiene un **propietario** (inicialmente el usuario que lo creó) y p
 un **grupo** en particular (generalmente el grupo principal del propietario). Basado en
 esta estructura, el sistema asigna permisos a tres niveles:
 
-* a nivel del propietario dueño del archivo.
+* a nivel del dueño del archivo.
 * a nivel del grupo del archivo (grupo al que pertenece el propietario).
 * a nivel de todos los demás usuarios.
 
