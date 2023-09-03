@@ -39,7 +39,7 @@ cosas, pero nunca ambas. Se  trata de una especialización excluyente.
 <p align="center"\><img src=img/especializacion-excluyente.png "hosts" alt="hosts"\>
 
 La existencia de supertipos y subtipos, en uno o varios niveles, da lugar a una jerarquía,
-que permitirá́ representar una restricción del mundo real.
+que permitirá representar una restricción del mundo real.
 
 ## 1.4.3 Agregación
 
