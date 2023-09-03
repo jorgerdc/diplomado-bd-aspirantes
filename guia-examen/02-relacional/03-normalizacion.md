@@ -10,9 +10,7 @@ Sea R una relación y sean X y Y subconjuntos cualesquiera del conjunto de atrib
 entonces podemos decir que Y es dependiente funcionalmente de X, si y sólo si en todo
 valor válido posible de R, cada valor X está asociado  con un valor de Y.
 
-<p align="center">
-  <img src="img/dependencia-funcional2.png"/>
-</p>
+<p align="center"><img src="img/dependencia-funcional2.png"/></p>
 
 La parte izquierda de una dependencia funcional DF se denomina determinante y la derecha
 dependiente.
@@ -66,12 +64,10 @@ Una tabla está en cuarta forma normal 4FN si:
 
 ### Ejemplo
 
-Dala la siguiente tabla de datos en la cual está registrada la información de las materias
-que cursan alumnos y su calificación, normalizaremos hasta la #FN
+Dada la siguiente tabla de datos en la cual está registrada la información de las materias
+que cursan alumnos y su calificación, normalizaremos hasta la 3FN
 
-<p align="center">
-  <img src="img/ejemplo.png"/>
-</p>
+<p align="center"><img src="img/ejemplo.png"/></p>
 
 ### 1FN
 
@@ -79,33 +75,41 @@ que cursan alumnos y su calificación, normalizaremos hasta la #FN
 materno y nombre
 
 * De acuerdo a la información de la tabla consideramos que no todos los
-pacientes tienen apellido materno por lo cual definimos el atributo paciente como
+estudiantes tienen apellido materno por lo cual definimos el atributo como
 opcional.
 
 * Obtenemos las dependencias funcionales
 
-<p align="center">
-  <img src="img/dep-funcionales.png"/>
-</p>
+```sql
+claveunica -> paterno, materno, nombre, alcaldía, colonia
+clavemateria -> nombremateria,  numcreditos
+clavealcaldia -> alcaldia
+claveunica, clavemateria -> calificacion
+```
 
-* De acuerdo a las dependencias funcionales determinamos la clave primaria, buscamos que
-atributo  o atributos  determinan de manera única a cada uno de los atributos de la tabla
+* De acuerdo a las dependencias funcionales determinamos la llave primaria, buscamos que
+atributo o atributos  determinan de manera única a cada uno de los atributos de la tabla
 
-claveunica, clavemateria ->  paterno, materno, nombre, clavealcaldia, alcaldia,
-                              clavemateria, nombremateria,  numcreditos, calificación
+```sql
+claveunica, clavemateria ->  paterno, materno, nombre, clavealcaldia, alcaldia, clavemateria, nombremateria,  numcreditos calificación
+```
 
-* Determinamos el tipo de pendencias:
+* Determinamos el tipo de dependencias:
 
-**Las dependencias parciales son**
+`Las dependencias parciales son`
 
+```sql
 claveunica -> paterno, materno, nombre, clavealcaldia, alcaldía
 clavemateria -> clavemateria, nombremateria,  numcreditos
+```
 
 Las llaves primarias compuestas generan dependencias parciales
 
-**Dependencias transitivas**
+`Dependencias transitivas`
 
+```sql
 clavealcaldía -> alcaldia
+```
 
 Es dependencia transitiva ya que un atributo que no es parte de la llave primaria
 determina a otro atributo que tampoco es clave
@@ -119,20 +123,26 @@ a) Por cada dependencia parcial se crea una nueva tabla, en donde el atributo
 determinante es la pk de la nueva tabla y sus atributos dependientes atributos de la
 tabla
 b) Se asigna un nombre a las nuevas tablas
-c) De la tabla base de eliminan solamente os atributos dependientes y los determinantes
+c) De la tabla base se eliminan solamente los atributos dependientes y los determinantes
 se establecen como llaves foráneas fk
 
 Tabla ESTUDIANTE
 
+```sql
 claveunica -> paterno, materno, nombre, clavealcaldia, alcaldía
+```
 
 Tabla MATERIA
 
+```sql
 clavemateria  -> nombremateria, creditos
+```
 
-Tabla original MATERIASCURSADAS
+Tabla original MATERIAS_CURSADAS
 
+```sql
 claveunica, clavemateria -> calificacion
+```
 
 ### 3FN
 
@@ -143,7 +153,15 @@ determinante como fk.
 
 Tabla ALCALDIA
 
+```sql
 clavealcaldia -> alcaldía
+```
+
+Tabla origen ESTUDIANTE
+
+```sql
+claveunica -> paterno, materno, nombre, clavealcaldia
+```
 
 La tabla original queda:
 
@@ -153,8 +171,11 @@ El modelo relacional resultante del proceso de normalización es el siguiente
 
 ### Ejemplo 4FN
 
-Revisemos el siguiente moodelo relacional que representa una base de datos que
-almacena la información de los cursos y certificaciones de estudiantes.
+Revisemos el siguiente modelo relacional que representa una base de datos que
+almacena la información de los cursos que ha tomado y las certificaciones de estudiantes.
+Consideremos que un curso lo toman varios estuduaintes y un estudiante toma muchos cursos.
+Así mismo, una cetificación la hacen varios estudiantes y puede tener varias
+certificaciones.Las  certificaciones no tienen nada que ver con los cursos.
 
 <p align="center"><img src="img/4fn.jpg"/></p>
 
