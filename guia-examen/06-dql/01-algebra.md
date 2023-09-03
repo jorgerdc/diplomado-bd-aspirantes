@@ -25,8 +25,8 @@ procesamiento de una consulta compleja.
 una nueva relación. Es decir de una o más relaciones existentes se genera otra relación.
 Se tiene los siguientes tipos de operadores:
 
-  * Básicos y derivados
-  * Propios de Bases de Datos y de conjuntos.
+  * Básicos
+  * Derivados
 
 ### 6.1.1 Operadores básicos
 
