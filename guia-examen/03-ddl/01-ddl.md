@@ -28,39 +28,32 @@ create table clientes
   estado_civil char(2) not null,
   fecha_nacimiento date not null
 );
-
   create table productos  
 ( producto_id number(6) primary key,  
   nombre varchar2(50) not null,
   precio number(6,2) not null
 );
-
   create table ventas
 (
   folio_id number(6) not null,
   cliente_id number(5) not null,  
   fecha_id date not null
 );
-
   create table desglose_ventas
 (
    folio_id number(6) not null,
    producto_id number(6),
    cantidad number(10,2)
 );
-
  create sequence idfolio
  increment by 1 start with 1;
-
  create view vista_productos as
  select nombre,
         precio
  from productos
  where precio between 25 and 50;
-
  create synonym precios_originales
  for fabrica.productos;
-
  create index indx_nom_prod
  on productos (nombre);
 ```
@@ -97,41 +90,32 @@ modificar un trigger, agregar constraints a una tabla, etc.
 ### 3.2.1 Ejemplos sentencia `alter`
 
 Los ejemplos a continuación modifican una tabla agregando constraints y columna,
-modificando el nombre de una columna, su tipo de dato, eliminando una columna, 
+modificando el nombre de una columna, su tipo de dato, eliminando una columna,
 habilitando y deshabilitando constraints.
 
 ```sql
 alter table ventas add constraint pk_ventas
 primary key (folio_id);
-
 alter table desglose_ventas add constraint
 pk_desglose_ventas
 primary key (folio_id, producto_id);
-
 alter table ventas add constraint fk_ven_cli
 foreign key (cliente_id)
 reference Clientes (cliente_id);
-
 alter table clientes
 add direccion varchar(100) null;
-
 alter table clientes
 rename column direccion to direccion_completa;
-
 alter table clientes
 modify direccion varchar(150) null;
-
 alter table ventas
 disable validate
 constraint fk_ven_cli;
-
 alter table ventas
 enable validate
 constraint fk_ven_cli;
-
 alter table ventas
 drop constraint fk_ven_cli;
-
 alter table clientes
 drop column direccion;
 ```
@@ -148,11 +132,7 @@ un sinónimo y un índice.
 
 ```sql
 drop table desglose_ventas;
-
 drop index indx_nom_prod;
-
 drop sequence idfolio;
-
 drop synonym precios_originales;
-
 ```
