@@ -11,15 +11,15 @@ llamadas subtipos; en estos casos los atributos comunes en los subtipos se asign
 entidad supertipo. Se pueden generalizar los tipos de profesores, por ejemplo; de tiempo
 completo, de asignatura, etc.
 
-<p align="center"\><img src=img/GENERALIZACION-NO-EXCLUYENTE.png "hosts" alt="hosts"\>
+<p align="center"\><img src=img/generalizacion-no-excluyente.png "hosts" alt="hosts"\>
 
 En el ejemplo anterior un empleado es cajero u oficial o puede tener ambos roles, pero
 debe tener un rol.
 
-Cuando un empleado solo tiene un rol, entonces decimos que es una generalización excluyente
-y se representa de la siguiente forma.
+Cuando un empleado solo tiene un rol, entonces decimos que es una generalización
+excluyente y se representa de la siguiente forma.
 
-<p align="center"\><img src=img/GENERALIZACION-EXCLUYENTE.png "hosts" alt="hosts"\>
+<p align="center"\><img src=img/generalizacion-excluyente.png "hosts" alt="hosts"\>
 
 ## 1.4.2 Especialización
 
