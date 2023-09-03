@@ -177,7 +177,7 @@ Consideremos que un curso lo toman varios estuduaintes y un estudiante toma much
 Así mismo, una cetificación la hacen varios estudiantes y puede tener varias
 certificaciones.Las  certificaciones no tienen nada que ver con los cursos.
 
-<p align="center"><img src="img/4fn.jpg"/></p>
+<p align="center"><img src="img/4FN.jpg"/></p>
 
 La siguiente imagen muestra un extracto de la información correspondiente a
 la tabla ESTUDIANTE_CURRICULA
@@ -193,4 +193,4 @@ certificaciones. Se hace uso de una tabla para almacenar 2 relaciones M:M
 Creamos las dos tablas de las relaciones M:M para eliminar la dependencia multivalor
 y así tenemos el modelo en su 4FN.
 
-<p align="center"><img src="img/4fn-2.jpg"/></p>
+<p align="center"><img src="img/4fn-final.jpg"/></p>
