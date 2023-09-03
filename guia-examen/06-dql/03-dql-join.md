@@ -2,7 +2,7 @@
 
 ## 6.3 SQL Joins (inner, outer, natural, self, cross)
 
-El operador Join se utilizan para recuperar datos de varias tablas. Se realiza un JOIN
+El operador Join se utiliza para recuperar datos de varias tablas. Se realiza un JOIN
 cada vez que se unen dos o más tablas en una instrucción SQL.
 
 Hay diferentes tipos de joins:
@@ -53,7 +53,7 @@ Este tipo de Join incluye todos los registros que se obtendrían al realizar un
 `inner join`, y de forma adicional, todos los registros de la tabla que aparece a la
 izquierda de la cláusula `join` que cumplan con las condiciones de la cláusula `where`
 sin importar si cumplen o no con la condición de la cláusula `on`. Dicho de otra forma,
-obtiene todos los registros de la tabla izuquierda sin importar si tienen correspondencia
+obtiene todos los registros de la tabla izquierda sin importar si tienen correspondencia
 con los registros de la tabla derecha.
 
 La sintaxis para `left outer join` es:
