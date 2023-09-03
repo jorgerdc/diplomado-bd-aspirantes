@@ -193,4 +193,5 @@ certificaciones. Se hace uso de una tabla para almacenar 2 relaciones M:M
 Creamos las dos tablas de las relaciones M:M para eliminar la dependencia multivalor
 y así tenemos el modelo en su 4FN.
 
-<p align="center"><img src="img/4fn-final.jpg"/></p>
+<p align="center"><img src="img/4forma-normal.jpg"/></p>
+
