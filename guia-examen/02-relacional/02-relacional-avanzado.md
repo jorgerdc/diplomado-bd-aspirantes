@@ -40,7 +40,7 @@ b) Hacer uso de banderas, se crean en el supertipo tantos atributos como suptipo
 ## 2.2.3 Agregación
 
 Se transforma primero la relación interna de la agregación la cual dará lugar a una
-nueva tabla, posteriormente se transforma la relacIón de la que participa la agregación.
+nueva tabla, posteriormente se transforma la relación de la que participa la agregación.
 
 <p align="center">
 <img src="img/agregacion.jpg"></p>
