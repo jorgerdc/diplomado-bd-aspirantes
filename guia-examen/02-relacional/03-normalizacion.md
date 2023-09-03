@@ -11,7 +11,7 @@ entonces podemos decir que Y es dependiente funcionalmente de X, si y sólo si e
 valor válido posible de R, cada valor X está asociado  con un valor de Y.
 
 <p align="center">
-  <img src="img/dependencia-funcional2.png" >
+  <img src="img/dependencia-funcional2.png"/>
 </p>
 
 La parte izquierda de una dependencia funcional DF se denomina determinante y la derecha
@@ -37,7 +37,8 @@ entre ellos, se dice que hay dependencias multivalor.
 
 Una realación está en primera forma normal 1FN si y solo si:
 
-* Todos sus atributos son atómicos, es decir, si toda tupla contiene exactamente un solo valor para cada atributo.
+* Todos sus atributos son atómicos, es decir, si toda tupla contiene exactamente un solo
+valor para cada atributo.
 * No hay grupos de repetición
 * La tabla tiene una llave primaria
 
@@ -62,3 +63,113 @@ Una tabla está en cuarta forma normal 4FN si:
 
 * Está en su tercera forma normal 3FN
 * No hay dependencias multivalor
+
+### Ejemplo
+
+Dala la siguiente tabla de datos en la cual está registrada la información de las materias
+que cursan alumnos y su calificación, normalizaremos hasta la #FN
+
+<p align="center">
+  <img src="img/ejemplo.png"/>
+</p>
+
+### 1FN
+
+* Observamos que el atributo estudiante no es atómico, entonces lo dividimos en paterno,
+materno y nombre
+
+* De acuerdo a la información de la tabla consideramos que no todos los
+pacientes tienen apellido materno por lo cual definimos el atributo paciente como
+opcional.
+
+* Obtenemos las dependencias funcionales
+
+<p align="center">
+  <img src="img/dep-funcionales.png"/>
+</p>
+
+* De acuerdo a las dependencias funcionales determinamos la clave primaria, buscamos que
+atributo  o atributos  determinan de manera única a cada uno de los atributos de la tabla
+
+claveunica, clavemateria ->  paterno, materno, nombre, clavealcaldia, alcaldia,
+                              clavemateria, nombremateria,  numcreditos, calificación
+
+* Determinamos el tipo de pendencias:
+
+**Las dependencias parciales son**
+
+claveunica -> paterno, materno, nombre, clavealcaldia, alcaldía
+clavemateria -> clavemateria, nombremateria,  numcreditos
+
+Las llaves primarias compuestas generan dependencias parciales
+
+**Dependencias transitivas**
+
+clavealcaldía -> alcaldia
+
+Es dependencia transitiva ya que un atributo que no es parte de la llave primaria
+determina a otro atributo que tampoco es clave
+
+### 2FN
+
+* La tabla está en su 1FN
+* Eliminamos dependencias parciales
+
+a) Por cada dependencia parcial se crea una nueva tabla, en donde el atributo
+determinante es la pk de la nueva tabla y sus atributos dependientes atributos de la
+tabla
+b) Se asigna un nombre a las nuevas tablas
+c) De la tabla base de eliminan solamente os atributos dependientes y los determinantes
+se establecen como llaves foráneas fk
+
+Tabla ESTUDIANTE
+
+claveunica -> paterno, materno, nombre, clavealcaldia, alcaldía
+
+Tabla MATERIA
+
+clavemateria  -> nombremateria, creditos
+
+Tabla original MATERIASCURSADAS
+
+claveunica, clavemateria -> calificacion
+
+### 3FN
+
+a) La tabla está en su segunda forma normal
+b) Eliminamos dependencias transitivas. Para cada dependencia transitiva se crea
+una tabla nueva con su pk y atributos de l atabla origen únicamente se queda el atributo
+determinante como fk.
+
+Tabla ALCALDIA
+
+clavealcaldia -> alcaldía
+
+La tabla original queda:
+
+El modelo relacional resultante del proceso de normalización es el siguiente
+
+<p align="center"><img src="img/ejemplo-normalizacion.jpg"/></p>
+
+### Ejemplo 4FN
+
+Revisemos el siguiente moodelo relacional que representa una base de datos que
+almacena la información de los cursos y certificaciones de estudiantes.
+
+<p align="center"><img src="img/4fn.jpg"/></p>
+
+La siguiente imagen muestra un extracto de la información correspondiente a
+la tabla ESTUDIANTE_CURRICULA
+
+<p align="center"><img src="img/4fn-ejemplo.png"/></p>
+
+En la tabla podemos ver que se asocian a un mismo estudiante tanto certificaciones como
+cursos, pero estos campos son independientes. Esto es una dependencia multivalor.
+
+Por otro lado, un mismo estudiante puede generar varios registros de cursos y
+certificaciones. Se hace uso de una tabla para almacenar 2 relaciones M:M
+
+Creamos las dos tablas de las relaciones M:M para eliminar la dependencia multivalor
+y así tenemos el modelo en su 4FN.
+
+<p align="center"><img src="img/4fn-2.jpg"/></p>
