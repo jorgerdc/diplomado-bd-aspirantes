@@ -19,8 +19,8 @@ Esta sentencia permite incorporar nuevos registros a una tabla existente en la b
 
 Sentencias para ingresar registros de formas variadas, como por ejemplo con el orden de creación de columnas, omitiendo el nombre de columnas, incluye una sentencia insert con select.
 
-    ```sql
-insert into clientes
+```sql
+insert into cliente
 ( nombre,
   cliente_id,
   ap_paterno,
@@ -31,24 +31,24 @@ insert into clientes
 values
 ('Ivan',1,'Morales','M','SO','20-mar-04');
 
-insert into clientes
+insert into cliente
 values
 (2,'Maria','Gonzalez','F','CA',to_date('20-07-2005',
 'dd-mm-yyyy') );
 
-insert into clientes
+insert into cliente
 select 3,
        nombre,
        ap_paterno,
        genero,
        estado_civil,
        fecha_nacimiento
-from clientes
+from cliente
 where cliente_id = 1;
 
 commit;
   
-    ```
+```
 
 ## 4.2 Sentencia `update`
 
@@ -58,20 +58,20 @@ Esta sentencia modifica un renglón dentro de una tabla de la base de datos.
 
 Las siguientes sentencias actualizan un  registro particular y varios que cumplen con la igualdad de genero Femenino.
 
-     ```sql
+```sql
 
-update clientes
+update cliente
 set nombre = 'Maribel',
     ap_paterno = 'Garcia'
 where cliente_id = 2;
 
-update clientes
+update cliente
 set genero = 'f'
 where genero = 'F';
 
 commit;
   
-     ```
+```
 
 ## 4.3 Sentencia `delete`
 
@@ -79,17 +79,17 @@ Este comando elimina un/os renglón/es dentro de una tabla de la base de datos.
 
 ### 4.2.1 Ejemplos Sentencia `delete`
 
-Las sentencias a continuación eliminan un registro en particular, confirmando la transacción permanente con commit y se eliminan a todos los clientes, pero esa transacción no se lleva a cabo, por el comando rollback.
+Las sentencias a continuación eliminan un registro en particular, confirmando la transacción permanente con commit y se eliminan a todos los clientes, pero esa transacción no se lleva a cabo, por el comando rollback el cual impide hacer cambios permanentes.
 
-     ```sql
+```sql
 
-delete clientes
+delete cliente
 where cliente_id = 1;
 
 commit;
 
-delete clientes;
+delete cliente;
 
 rollback;
   
-     ```
+```
