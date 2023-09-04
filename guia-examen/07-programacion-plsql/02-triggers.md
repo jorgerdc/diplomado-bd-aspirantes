@@ -39,7 +39,7 @@ El trigger se dispara cuando ocurre alguno de los siguientes eventos:
 
 #### 7.6.1.1 Pseudorecords :new, :old
 
-Las variables `:new` y `:old`  aplican para triggers de tipo **for each row**. Sus valores
+Las variables `:new` y `:old`  aplican para triggers del tipo **for each row**. Sus valores
 apuntan al registro que provocó el evento, por ejemplo, el registro que se está insertando,
 modificando o eliminando. Sus valores dependen de tipo de operación DML:
 
