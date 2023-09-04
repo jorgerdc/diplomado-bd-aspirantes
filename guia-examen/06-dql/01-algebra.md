@@ -18,10 +18,10 @@ partir de las cuales se definen operaciones más complejas.
 * Sus operandos son relaciones (tablas) o variables que representan a un conjunto de
 datos.
 
-* Sus operadores estan diseñados para realizar el acceso a datos como parte del
+* Sus operadores están diseñados para realizar el acceso a datos como parte del
 procesamiento de una consulta compleja.
 
-* Las operaciones de álgebra relacional actuán sobre relaciones generando como resultado
+* Las operaciones de álgebra relacional actúan sobre relaciones generando como resultado
 una nueva relación. Es decir de una o más relaciones existentes se genera otra relación.
 Se tiene los siguientes tipos de operadores:
 
@@ -86,11 +86,11 @@ completos, permiten expresar cualquier consulta sobre una Base de Datos
 
   El producto cartesiano realiza combinaciones de las tuplas de una relación R1 con cada
   una de las tuplas de otra relación R2. Esta combinación permite realizar uniones
-  horizontales de cualquer par de relaciones. Son uniones horizontales porque a partir de
-  dos relaciones se obtiene una sola, cuyas columnas es la unión de las columnas de las
+  horizontales de cualquier par de relaciones. Son uniones horizontales porque a partir de
+  dos relaciones se obtiene una sola, cuyas columnas son la unión de las columnas de las
   relaciones originales.
 
-  Combina tuplas de cualquieras dos (o más) relaciones, hace la combinación de todos con
+  Combina tuplas de cualesquieras dos (o más) relaciones, hace la combinación de todos con
   todos.
 
   Si las relaciones a operar tienen N y M tuplas de n y m atributos respectivamente, la
