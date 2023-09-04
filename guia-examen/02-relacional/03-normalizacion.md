@@ -73,11 +73,9 @@ que cursan alumnos y su calificación, normalizaremos hasta la 3FN
 
 * Observamos que el atributo estudiante no es atómico, entonces lo dividimos en paterno,
 materno y nombre
-
 * De acuerdo a la información de la tabla consideramos que no todos los
 estudiantes tienen apellido materno por lo cual definimos el atributo como
 opcional.
-
 * Obtenemos las dependencias funcionales
 
 ```sql
@@ -87,14 +85,16 @@ clavealcaldia -> alcaldia
 claveunica, clavemateria -> calificacion
 ```
 
-* De acuerdo a las dependencias funcionales determinamos la llave primaria, buscamos que
-atributo o atributos  determinan de manera única a cada uno de los atributos de la tabla
+* De acuerdo a las dependencias funcionales determinamos la llave primaria, buscamos al
+atributo o atributos que determinan de manera única a cada uno de los atributos de la tabla
 
 ```sql
 claveunica, clavemateria ->  paterno, materno, nombre, clavealcaldia, alcaldia, clavemateria, nombremateria,  numcreditos calificación
 ```
 
 * Determinamos el tipo de dependencias:
+
+Las llaves primarias compuestas generan dependencias parciales
 
 `Las dependencias parciales son`
 
@@ -103,8 +103,6 @@ claveunica -> paterno, materno, nombre, clavealcaldia, alcaldía
 clavemateria -> clavemateria, nombremateria,  numcreditos
 ```
 
-Las llaves primarias compuestas generan dependencias parciales
-
 `Dependencias transitivas`
 
 ```sql
@@ -112,18 +110,18 @@ clavealcaldía -> alcaldia
 ```
 
 Es dependencia transitiva ya que un atributo que no es parte de la llave primaria
-determina a otro atributo que tampoco es clave
+determina a otro atributo que tampoco forma parte de la llave primaria.
 
 ### 2FN
 
 * La tabla está en su 1FN
 * Eliminamos dependencias parciales
 
-a) Por cada dependencia parcial se crea una nueva tabla, en donde el atributo
+* Por cada dependencia parcial se crea una nueva tabla, en donde el atributo
 determinante es la pk de la nueva tabla y sus atributos dependientes atributos de la
 tabla
-b) Se asigna un nombre a las nuevas tablas
-c) De la tabla base se eliminan solamente los atributos dependientes y los determinantes
+* Se asigna un nombre a las nuevas tablas
+* De la tabla base se eliminan solamente los atributos dependientes y los determinantes
 se establecen como llaves foráneas fk
 
 Tabla ESTUDIANTE
@@ -146,8 +144,8 @@ claveunica, clavemateria -> calificacion
 
 ### 3FN
 
-a) La tabla está en su segunda forma normal
-b) Eliminamos dependencias transitivas. Para cada dependencia transitiva se crea
+* La tabla está en su segunda forma normal
+* Eliminamos dependencias transitivas. Para cada dependencia transitiva se crea
 una tabla nueva con su pk y atributos de l atabla origen únicamente se queda el atributo
 determinante como fk.
 
@@ -173,9 +171,15 @@ El modelo relacional resultante del proceso de normalización es el siguiente
 
 Revisemos el siguiente modelo relacional que representa una base de datos que
 almacena la información de los cursos que ha tomado y las certificaciones de estudiantes.
-Consideremos que un curso lo toman varios estuduaintes y un estudiante toma muchos cursos.
-Así mismo, una cetificación la hacen varios estudiantes y puede tener varias
-certificaciones.Las  certificaciones no tienen nada que ver con los cursos.
+
+Considerar las siguientes reglas de negocio:
+
+* Un curso lo toman varios estudiantes, un estudiante puede tomar varios cursos de
+preparación.
+* Una certificación puede ser adquirida por varios estudiantes, un estudiante puede
+obtener varias certificaciones.
+* Los cursos de preparación que se ofrecen no se asocian de forma directa con una
+certificación, son cursos genéricos que contribuyen con el aprendizaje del estudiante.
 
 <p align="center"><img src="img/4FN.jpg"/></p>
 
@@ -194,4 +198,3 @@ Creamos las dos tablas de las relaciones M:M para eliminar la dependencia multiv
 y así tenemos el modelo en su 4FN.
 
 <p align="center"><img src="img/4forma-normal.jpg"/></p>
-
