@@ -25,10 +25,10 @@ commit work;
 
 ...
 
-EXCEPTION
-   when OTHERS then
+exception
+   when others then
       rollback work;
-END;
+end;
 
 ```
 
