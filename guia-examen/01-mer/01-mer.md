@@ -154,9 +154,9 @@ ejemplar de una entidad.
 **Tipos de relaciones:** Número de ejemplares de una entidad asociados con un ejemplear o
 instancia de la otra entidad. Existen 3 tipos:
 
-Uno a Uno (1:1)
-Uno a muchos (1:m)
-Muchos a muchos (m:m)
+* Uno a Uno (1:1)
+* Uno a muchos (1:m)
+* Muchos a muchos (m:m)
 
 * Cardinalidad, se define como el número mínimo y máximo de ejemplares de una entidad
 que pueden estar relacionados con un ejemplar de la otra entidad. Los valores que pueden
@@ -205,21 +205,4 @@ departamento. Se hará un seguimiento del número de horas por semana que un emp
 trabaja en cada proyecto. También se realizará el seguimiento del supervisor directo
 de cada empleado.
 
-
 <p align="center"><img src="img/empresa.png"/></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
