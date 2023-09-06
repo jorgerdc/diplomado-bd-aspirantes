@@ -23,7 +23,7 @@ como se muestra a continuación:
   <img src="img/tabla.png" >
 </p>
 
-En la parte superior del rectangulo, primera parte, se coloca la llave primaria de la
+En la parte superior del rectángulo, primera parte, se coloca la llave primaria de la
 tabla (clave principal del MER) y en la parte inferior el resto de los atributos:
 
 a) En claves candidatas se establece restricción de unicidad (unique)
@@ -33,7 +33,7 @@ b) Atributos compuestos se colocan en forma individual
 c) Atributos multivalorados; se crea una nueva tabla pasando la clave primaria de la
 tabla como clave foránea a la nueva tabla.
 
-d) Atributo opcional se establace como atributo con valores nulos NULL.
+d) Atributo opcional se establece como atributo con valores nulos NULL.
 
 e) Los atributos derivados se establecen como atributos calculados, o como columnas
 virtuales en el caso de Oracle.
@@ -68,7 +68,7 @@ Ejemplo:
   <img src="img/relacion-uno-muchos.png" >
 </p>
 
-Su presentanción en el modelo relacional es:
+Su representanción en el modelo relacional es:
 
 <p align="center">
   <img src="img/uno-muchos.jpg" >
