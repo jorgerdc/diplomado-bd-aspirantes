@@ -43,8 +43,8 @@ su relación (doble rombo).
 
 <p align="center"><img src="img/entidad-debil.png"/></p>
 
-Un ejemplo de entidad débil sería ejemplar que es débil respecto a la entidad libro,
-ejemplar es débil porque su existencia depende de la entidad libro.
+Un ejemplo de entidad débil sería ejemplar que es débil respecto a la entidad ``Libro``,
+``Ejemplar`` es débil porque su existencia depende de la entidad ``Libro``.
 
 ## 1.2 Tipos de atributos
 
@@ -57,21 +57,6 @@ atirbutos de una entidad, se genera una instancia. Por otro lado, existen relaci
 que también pueden tener atributos.
 
 * Dominio, posibles valores que puede adquirir un atributo.
-
-<p align="center"><img src="img/dominio.png"/></p>
-
-Donde:
-    D es el dominio
-    V es el valor
-    P es el predicado
-
-Ejemplo: Consideremos el atributo materia en donde el dominio es:
-
-  D={ materia : p('programación', ingenieria de software, estructiras discretas,
-      bases de datos)}
-
-Base de datos es un valor valido ya que está dentro del conjunto de materias válidas
-para el atributo materia.
 
 En el modelo entidad relación se tienen varios tipos de atributos:
 
