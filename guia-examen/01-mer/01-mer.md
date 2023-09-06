@@ -182,7 +182,6 @@ a otros.
 
 <p align="center"><img src="img/relacion-unaria.png"/></p>
 
-
 ## Ejemplo
 
 A continuación, se presentan los requisitos de una empresa que requiere dar seguimiento
