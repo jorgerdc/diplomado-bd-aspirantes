@@ -43,7 +43,7 @@ inner join proveedor pe
 on po.producto_id=pe.producto_id;
 ```
 
-En este ejemplo se mostrarán todas los registro de los atributos `producto_id` y
+En este ejemplo se mostrarán todos los registro de los atributos `producto_id` y
 `proveedor_id` de las tablas de `proveedor` y `producto` donde haya un valor de
 `producto_id` coincidente en las tablas de `proveedor` y `producto`.
 
@@ -81,7 +81,7 @@ left outer join proyecto p
 on e.empleado_id=p.empleado_id;
 ```
 
-En este ejemplo se mostrarán todas los registros del atributo empleado_id de la tabla de
+En este ejemplo se mostrarán todos los registros del atributo empleado_id de la tabla de
 empleado y solo aquellos registros de la tabla de proyecto donde el atributo empleado_id
 es igual.
 
@@ -123,7 +123,7 @@ right outer join pedido pe
 on pv.proveedor_id = pe.proveedor_id;
 ```
 
-En este ejemplo se mostrarán todas los registros de la tabla de `pedido` y solo aquellos
+En este ejemplo se mostrarán todos los registros de la tabla de `pedido` y solo aquellos
 registros de la tabla de `proveedor` donde el atributo `proveedor_id` es igual.
 
 Si un valor de `pedido_id` en la tabla de `pedido` no existe en la tabla de `proveedor`, el
@@ -160,7 +160,7 @@ full outer join pedido pe
 on pv.proveedor_id = pe.proveedor_id;
 ```
 
-En este ejemplo se mostrarán todas los registros de la tabla de `proveedor` y todas los
+En este ejemplo se mostrarán todos los registros de la tabla de `proveedor` y todas los
 registros de la tabla de `pedido` y dónde no se cumpla la condición de unión, se mostrarán
 nulls en esos registros en el conjunto de resultados.
 
