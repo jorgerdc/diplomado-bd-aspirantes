@@ -1,4 +1,4 @@
-# Administración, clusterización y analítuca de base de datos
+# Diplomado - Administración, clusterización y analítica de base de datos
 
 EL contenido de este repositorio está dirigido a los aspirantes que desean
 cursar el diplomado. Los recursos que ofrece son:
